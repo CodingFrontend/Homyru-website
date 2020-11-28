@@ -19,30 +19,23 @@
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .btn {
 	display: inline-flex;
-	padding: 0px 25px;
-	height: 35px;
+	padding: 0px 10px;
+	height: 26px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #fd8424;
-	font-size: 12px;
-	line-height: 18px;
-	font-weight: 400;
+	font-size: 13px;
+	font-weight: 300;
 	color: #fff;
-	@include transition(all .3s ease);
+	border-radius: 3px;
+	text-transform: lowercase;
+	letter-spacing: 0.5px;
+	@include transition(all 0.3s ease);
 	@media (min-width: 992px) {
 		&:hover {
 			background-color: #b86029;
 		}
-	}
-	&_grey {
-		background-color: #e6e6e6;
-		color: #666666;
-		@media (min-width: 992px) {
-		&:hover {
-			background-color: #c7c7c7;
-		}
-	}
 	}
 	&._fw {
 		width: 100%;
@@ -134,7 +127,7 @@
 		.select__options {
 			display: block;
 			.select__option {
-				display: block!important;
+				display: block !important;
 			}
 		}
 	}
@@ -156,6 +149,7 @@ textarea {
 	height: 30px;
 	display: block;
 	padding: 0px 15px;
+	background-color: #eff0f4;
 	&._focus {
 	}
 	&._error {
@@ -365,7 +359,7 @@ textarea.input {
 		// .quantity__button_plus
 		&_plus {
 			@include rotate(-180deg);
-			@media (min-width: $md2+px){
+			@media (min-width: $md2+px) {
 				&:hover {
 					@include rotate(0deg);
 					background: url("../img/icons/catalog/pagging-arrow-active.png") 0 0 / 100% no-repeat;
@@ -374,7 +368,7 @@ textarea.input {
 		}
 		// .quantity__button_minus
 		&_minus {
-			@media (min-width: $md2+px){
+			@media (min-width: $md2+px) {
 				&:hover {
 					@include rotate(180deg);
 					background: url("../img/icons/catalog/pagging-arrow-active.png") 0 0 / 100% no-repeat;
