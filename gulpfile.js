@@ -18,14 +18,26 @@ let newer = require('gulp-newer');
 let webp = require('imagemin-webp');
 let webpcss = require("gulp-webp-css");
 let webphtml = require('gulp-webp-html');
+let svgSprite = require('gulp-svg-sprite');
+let svgmin = require('gulp-svgmin');
+let cheerio = require('gulp-cheerio');
+let replace = require('gulp-replace');
 
 let fonter = require('gulp-fonter');
 
 let ttf2woff = require('gulp-ttf2woff');
 let ttf2woff2 = require('gulp-ttf2woff2');
 
+// let iconfont = require('gulp-iconfont');
+// let iconfontCss = require('gulp-iconfont-css');
+// let fontName = 'icomoon';
+let fileExists = require('file-exists');
+let gulpif = require('gulp-if');
+
 let project_name = require("path").basename(__dirname);
 let src_folder = "#src";
+
+let webFontsPath = 'node_modules/@fortawesome/fontawesome-free/webfonts/*';
 
 let path = {
 	build: {
@@ -33,7 +45,8 @@ let path = {
 		js: project_name + "/js/",
 		css: project_name + "/css/",
 		images: project_name + "/img/",
-		fonts: project_name + "/fonts/"
+		fonts: project_name + "/fonts/",
+		distWebfonts: project_name + '/webfonts/',
 	},
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
@@ -41,13 +54,15 @@ let path = {
 		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}", "!**/favicon.*"],
-		fonts: src_folder + "/fonts/*.ttf"
+		fonts: src_folder + "/fonts/*.ttf",
+		sprite: src_folder + '/iconsprite/*.svg'
 	},
 	watch: {
 		html: src_folder + "/**/*.html",
 		js: src_folder + "/**/*.js",
 		css: src_folder + "/scss/**/*.scss",
-		images: src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}"
+		images: src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
+		sprite: src_folder + '/iconsprite/*.svg'
 	},
 	clean: "./" + project_name + "/"
 };
@@ -169,11 +184,6 @@ function fonts() {
 		.pipe(dest(path.build.fonts))
 		.pipe(browsersync.stream());
 }
-
-gulp.task('icons', function () {
-	return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
-		.pipe(gulp.dest(path.build.fonts));
-});
 function fontsStyle(done) {
 
 	let file_content = fs.readFileSync(src_folder + '/scss/fonts.scss');
@@ -195,6 +205,91 @@ function fontsStyle(done) {
 	}
 	done();
 }
+// gulp.task('icons', function () {
+// 	return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+// 		.pipe(gulp.dest(project_name + '/webfonts/'));
+// });
+
+// use a file of webfonts to check it's existing then make a copy in dist
+const fontawesomeWebfont =
+	'node_modules/@fortawesome/fontawesome-free/webfonts/fa-brands-400.eot';
+
+// to check if file exists or not for testing purposes
+// console.log(fileExists.sync(fontawesomeWebfont)); // OUTPUTS: true or false
+
+// copy webfonts folder if it exists
+// because our task contains asynchronous code
+// use async before our task
+// to avoid getting this error `Did you forget to signal async completion`
+async function copyfontawesomeWebfontsTask() {
+	return gulpif(
+		fileExists.sync(fontawesomeWebfont),
+		src(webFontsPath).pipe(dest(path.build.distWebfonts))
+	);
+}
+// function iconsfont() {
+// 	src(src_folder + '/iconsfont/*.svg')
+// 		.pipe(iconfontCss({
+// 			path: src_folder + '/templates/icons.scss',
+// 			fontName: fontName,
+// 			targetPath: '../scss/icons.scss',
+// 			fontPath: '../fonts/icons/'
+// 		}))
+// 		.pipe(iconfont({
+// 			fontName: fontName
+// 		}))
+// 		.pipe(dest(path.build.iconsfont));
+// 	return src(src_folder + '/iconsfont/*.svg')
+// 		.pipe(iconfontCss({
+// 			path: src_folder + '/templates/icons.scss',
+// 			fontName: fontName,
+// 			targetPath: '../scss/icons.scss',
+// 			fontPath: '../fonts/icons/'
+// 		}))
+// 		.pipe(iconfont({
+// 			fontName: fontName
+// 		}))
+// 		.pipe(dest(path.build.iconsfont))
+// 		.pipe(browsersync.stream());
+// }
+
+function svgSpriteBuild() {
+	return src(path.src.sprite)
+		// minify svg
+		.pipe(svgmin({
+			js2svg: {
+				pretty: true
+			}
+		}))
+		// remove all fill, style and stroke declarations in out shapes
+		.pipe(cheerio({
+			run: function ($) {
+				$('[fill]').removeAttr('fill');
+				$('[stroke]').removeAttr('stroke');
+				$('[style]').removeAttr('style');
+			},
+			parserOptions: { xmlMode: true }
+		}))
+		// cheerio plugin create unnecessary string '&gt;', so replace it.
+		.pipe(replace('&gt;', '>'))
+		// build svg sprite
+		.pipe(svgSprite({
+			mode: {
+				stack: {
+					sprite: "../sprite.svg",
+					// example: true
+					render: {
+						scss: {
+							dest: "../../../#src/scss/sprite.scss",
+							template: src_folder + "/templates/sprite_template.scss"
+						}
+					}
+				}
+			},
+		}))
+		.pipe(dest('#src/img/'));
+}
+
 function cb() { }
 function clean() {
 	return del(path.clean);
@@ -204,10 +299,14 @@ function watchFiles() {
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
 	gulp.watch([path.watch.images], images);
+	gulp.watch([path.watch.sprite], svgSpriteBuild);
 }
-let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images, fonts), fontsStyle);
+
+let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images, svgSpriteBuild, fonts, copyfontawesomeWebfontsTask), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.svgSpriteBuild = svgSpriteBuild;
+exports.copyfontawesomeWebfontsTask = copyfontawesomeWebfontsTask;
 exports.html = html;
 exports.css = css;
 exports.js = js;

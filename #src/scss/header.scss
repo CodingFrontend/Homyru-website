@@ -178,7 +178,7 @@
 	&__compare {
 		display: inline-block;
 		padding: 0px 0px 3px 21px;
-		background: url("../img/icons/compare.svg") left top no-repeat;
+		background: url(../img/sprite.svg#compare) no-repeat;
 		border-bottom: 1px dashed #4673ab;
 		span {
 			margin-left: 7px;
@@ -200,7 +200,7 @@
 	border-radius: 10px;
 	&:before {
 		content: "";
-		background: url("../img/icons/cart.svg") 0 0 no-repeat;
+		background: url(../img/sprite.svg#cart) no-repeat;
 		width: 26px;
 		height: 23px;
 		position: absolute;
@@ -339,9 +339,25 @@
 	&__box {
 	}
 }
+.social-contacts {
+	&__icons {
+	}
+	&__whatsapp {
+	}
+	&__viber {
+	}
+	&__chat {
+		color: #040d0d;
+		font-size: 13px;
+		margin: 0px 0px 3px 0px;
+	}
+}
+
 .box-contacts {
 	display: flex;
 	flex-direction: column;
+	&__social {
+	}
 	&__phone {
 		color: #040d0d;
 		font-size: 22px;
@@ -355,19 +371,12 @@
 		font-size: 13px;
 	}
 
-	&__chat {
-		color: #040d0d;
-		font-size: 13px;
-		margin: 0px 0px 3px 0px;
-	}
-
 	&__email {
 		font-size: 13px;
 		color: #4673ab;
 		text-decoration: underline;
 	}
 }
-
 .search {
 	display: flex;
 
@@ -377,7 +386,6 @@
 	&__btn {
 	}
 }
-
 .info-shopping {
 	&__cart {
 	}

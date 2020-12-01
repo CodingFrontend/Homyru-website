@@ -6,16 +6,17 @@
 
 //<Подключаем шрифты>=======================================================================================
 //&display=swap&subset=cyrillic-ext
-@import "fonts";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
-@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
+// @import "fonts";
+//
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 //</Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================
-//@import "icons";
+@import "sprite";
 //</Иконочные шрифты>==========================================================================================
 
 //<Шрифт по умолчанию>==========================================================================================
@@ -34,6 +35,7 @@ $md3: 767.98;
 $md4: 479.98;
 
 $color: #1ab9ce;
+// $fa-font-path: "../webfonts";
 //</ПЕРЕМЕННЫЕ>===========================================================================================================
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
