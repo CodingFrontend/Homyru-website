@@ -7,6 +7,11 @@
 //<Подключаем шрифты>=======================================================================================
 //&display=swap&subset=cyrillic-ext
 @import "fonts";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 //</Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================

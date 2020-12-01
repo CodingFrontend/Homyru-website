@@ -71,7 +71,6 @@
 	}
 
 	&__contacts {
-		display: flex;
 	}
 
 	&__label {
@@ -115,13 +114,6 @@
 	}
 
 	&__shopping-info {
-	}
-}
-.contacts {
-	&__bubble {
-	}
-
-	&__box {
 	}
 }
 .box-contacts {
@@ -303,13 +295,42 @@
 	}
 }
 .contacts {
+	display: flex;
 	&__bubble {
-		flex: 0 0 115px;
-		padding: 15px;
+		flex: 0 0 98px;
+		align-self: baseline;
+		text-align: center;
+		padding: 10px;
 		font-size: 12px;
-		line-height: 22px / 12px * 100%;
+		line-height: 18px / 12px * 100%;
 		text-transform: uppercase;
 		color: #4673ab;
+		border: 2px solid #dbdee6;
+		border-radius: 10px;
+		position: relative;
+		margin: 0px 30px 0px 0px;
+		&:before,
+		&:after {
+			content: "";
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			border-left: 0px;
+		}
+		&:before {
+			right: -17px;
+			top: 12px;
+			border: 16px solid;
+			border-left: 0px;
+			border-color: #dbdee6 transparent transparent #dbdee6;
+		}
+		&:after {
+			top: 14px;
+			right: -12px;
+			border: 14px solid;
+			border-left: 0px;
+			border-color: #fff transparent transparent transparent;
+		}
 		span {
 			border-bottom: 1px dotted;
 		}
@@ -321,11 +342,11 @@
 .box-contacts {
 	display: flex;
 	flex-direction: column;
-	margin: 0px 0px 0px 15px;
 	&__phone {
 		color: #040d0d;
 		font-size: 22px;
-		margin: 0px 0px 7px 0px;
+		margin: 0px 0px 5px 0px;
+		font-weight: 500;
 	}
 
 	&__days {
