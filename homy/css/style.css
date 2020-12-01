@@ -8,23 +8,19 @@
 }
 
 .icon-cart {
-  font-size: 2.1875rem;
-  width: 1.15429em;
+  font-size: 1em;
 }
 
 .icon-compare {
-  font-size: 1.9906rem;
-  width: 0.74751em;
+  font-size: 1em;
 }
 
 .icon-viber {
-  font-size: 51.2rem;
-  width: 1em;
+  font-size: 1em;
 }
 
 .icon-whatsapp {
-  font-size: 51.2rem;
-  width: 0.875em;
+  font-size: 1em;
 }
 
 * {
@@ -1547,6 +1543,7 @@ body.ie ._ibg img {
   display: inline-block;
   padding: 0px 0px 3px 21px;
   background: url(../img/sprite.svg#compare) no-repeat;
+  background-color: #ff5816;
   border-bottom: 1px dashed #4673ab;
 }
 
@@ -1687,6 +1684,27 @@ body.ie ._ibg img {
 
 .contacts__bubble span {
   border-bottom: 1px dotted;
+}
+
+.social-contacts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.social-contacts__icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+}
+
+.social-contacts__whatsapp {
+  color: #4fc95d;
+}
+
+.social-contacts__viber {
+  color: #7b519c;
 }
 
 .social-contacts__chat {

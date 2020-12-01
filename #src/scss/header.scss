@@ -179,6 +179,7 @@
 		display: inline-block;
 		padding: 0px 0px 3px 21px;
 		background: url(../img/sprite.svg#compare) no-repeat;
+		background-color: #ff5816;
 		border-bottom: 1px dashed #4673ab;
 		span {
 			margin-left: 7px;
@@ -340,11 +341,16 @@
 	}
 }
 .social-contacts {
+	display: flex;
 	&__icons {
+		display: flex;
+		font-size: 16px;
 	}
 	&__whatsapp {
+		color: #4fc95d;
 	}
 	&__viber {
+		color: #7b519c;
 	}
 	&__chat {
 		color: #040d0d;
