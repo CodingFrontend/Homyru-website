@@ -53,16 +53,24 @@
 	}
 
 	&__info {
-		display: flex;
-		align-items: center;
 	}
 }
 
 .info-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 	&__column {
-		margin: 0px 60px 0px 0px;
-		&:last-child {
-			margin: 0px 0px 0px 0px;
+		@media (max-width: $md2+px) {
+			&:nth-child(3) {
+				display: none;
+			}
+		}
+		@media (max-width: $maxWidthContainer+px) {
+			padding-right: 20 / $maxWidthContainer * 100vw;
+			&:last-child {
+				padding: 0;
+			}
 		}
 	}
 
@@ -76,7 +84,7 @@
 	&__label {
 		display: flex;
 		align-items: center;
-		margin: 0px 0px 12px 0px;
+		margin: 0px 0px 10px 0px;
 		.rub {
 			width: 25px;
 			height: 25px;
@@ -107,6 +115,12 @@
 				font-size: 18px;
 				font-weight: 400;
 			}
+			@media (max-width: $md1+px) {
+				font-size: 13px;
+				span {
+					font-size: 16px;
+				}
+			}
 		}
 	}
 
@@ -117,16 +131,30 @@
 	}
 }
 .box-contacts {
+	&__social {
+	}
 	&__phone {
+		color: #040d0d;
+		font-size: 22px;
+		margin: 0px 0px 5px 0px;
+		font-weight: 500;
 	}
 
 	&__days {
-	}
-
-	&__chat {
+		margin: 0px 0px 5px 0px;
+		color: #040d0d;
+		font-size: 13px;
 	}
 
 	&__email {
+		font-size: 13px;
+		color: #4673ab;
+		text-decoration: underline;
+		@media (min-width: $md2+px) {
+			&:hover {
+				text-decoration: none;
+			}
+		}
 	}
 }
 
@@ -149,6 +177,20 @@
 }
 
 .info-shopping {
+	&__buy {
+		display: flex;
+		align-items: center;
+	}
+	&__search-icon {
+		display: inline-block;
+		width: 22px;
+		height: 22px;
+		background: url("../img/icons/search.png") 0 0 no-repeat;
+		margin: 0px 20px 0px 0px;
+		@media (min-width: $md2+px) {
+			display: none;
+		}
+	}
 	&__cart {
 		margin: 0px 0px 5px 0px;
 	}
@@ -188,6 +230,7 @@
 	}
 }
 .cart-shopping-info {
+	width: 100%;
 	display: inline-block;
 	height: 52px;
 	background: url("../img/icons/cart-bg.jpg") 0 0 no-repeat;
@@ -202,6 +245,7 @@
 	&:before {
 		content: "";
 		background: url(../img/sprite.svg#cart) no-repeat;
+		background-color: #fff;
 		width: 26px;
 		height: 23px;
 		position: absolute;
@@ -296,9 +340,10 @@
 	}
 }
 .contacts {
-	display: flex;
+	display: inline-flex;
 	&__bubble {
 		flex: 0 0 98px;
+		width: 98px;
 		align-self: baseline;
 		text-align: center;
 		padding: 10px;
@@ -310,6 +355,9 @@
 		border-radius: 10px;
 		position: relative;
 		margin: 0px 30px 0px 0px;
+		@media (max-width: $md1+px) {
+			margin: 0px 20px 0px 0px;
+		}
 		&:before,
 		&:after {
 			content: "";
@@ -338,77 +386,49 @@
 	}
 
 	&__box {
+		flex: 0 0 198px;
+		width: 198px;
 	}
 }
 .social-contacts {
-	display: flex;
-	&__icons {
-		display: flex;
-		font-size: 16px;
-	}
-	&__whatsapp {
-		color: #4fc95d;
-	}
-	&__viber {
-		color: #7b519c;
-	}
+	margin: 0px 0px 3px 0px;
 	&__chat {
-		color: #040d0d;
-		font-size: 13px;
+		display: flex;
 		margin: 0px 0px 3px 0px;
 	}
+	&__skype {
+		display: flex;
+		@media (min-width: $md2+px) {
+			display: none;
+		}
+	}
 }
-
-.box-contacts {
-	display: flex;
-	flex-direction: column;
-	&__social {
-	}
-	&__phone {
-		color: #040d0d;
-		font-size: 22px;
-		margin: 0px 0px 5px 0px;
-		font-weight: 500;
+.chat-social {
+	&__whatsapp {
+		fill: #4dc95c;
+		margin: 0px 3px 0px 0px;
+		font-size: 16px;
 	}
 
-	&__days {
-		margin: 0px 0px 5px 0px;
+	&__viber {
+		fill: #7b519c;
+		margin: 0px 5px 0px 0px;
+		font-size: 16px;
+	}
+
+	&__tel {
 		color: #040d0d;
 		font-size: 13px;
 	}
 
-	&__email {
+	&__skype {
+		fill: #00adef;
+		margin: 0px 5px 0px 0px;
+		font-size: 16px;
+	}
+
+	&__login {
+		color: #040d0d;
 		font-size: 13px;
-		color: #4673ab;
-		text-decoration: underline;
-	}
-}
-.search {
-	display: flex;
-
-	&__input {
-	}
-
-	&__btn {
-	}
-}
-.info-shopping {
-	&__cart {
-	}
-
-	&__actions {
-	}
-
-	&__favorites {
-	}
-
-	&__compare {
-	}
-}
-.cart-shopping-info {
-	&__label {
-	}
-
-	&__amount {
 	}
 }

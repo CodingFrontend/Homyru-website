@@ -264,9 +264,9 @@ function svgSpriteBuild() {
 		// remove all fill, style and stroke declarations in out shapes
 		.pipe(cheerio({
 			run: function ($) {
-				$('[fill]').removeAttr('fill');
+				// $('[fill]').removeAttr('fill');
 				$('[stroke]').removeAttr('stroke');
-				$('[style]').removeAttr('style');
+				// $('[style]').removeAttr('style');
 			},
 			parserOptions: { xmlMode: true }
 		}))

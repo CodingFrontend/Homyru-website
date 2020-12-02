@@ -4,7 +4,6 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  fill: currentColor;
 }
 
 .icon-cart {
@@ -12,6 +11,10 @@
 }
 
 .icon-compare {
+  font-size: 1em;
+}
+
+.icon-skype {
   font-size: 1em;
 }
 
@@ -542,27 +545,6 @@ textarea.input {
   font-weight: 900;
   width: 100%;
   text-align: center;
-}
-
-._arrow {
-  background: url("../img/icons/main/content/arrowSlider.png") 0 0/100% no-repeat;
-  width: 33px;
-  height: 30px;
-  cursor: pointer;
-}
-
-._arrow_prev {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  margin-right: 20px;
-}
-
-._arrow_next {
-  -webkit-transform: rotate(0deg);
-  -ms-transform: rotate(0deg);
-  transform: rotate(0deg);
-  margin-left: 20px;
 }
 
 .row:after {
@@ -1414,21 +1396,16 @@ body.ie ._ibg img {
   transition: all 0.3s ease;
 }
 
-.header__info {
+.info-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-}
-
-.info-header__column {
-  margin: 0px 60px 0px 0px;
-}
-
-.info-header__column:last-child {
-  margin: 0px 0px 0px 0px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .info-header__logo {
@@ -1444,7 +1421,7 @@ body.ie ._ibg img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0px 0px 12px 0px;
+  margin: 0px 0px 10px 0px;
 }
 
 .info-header__label .rub {
@@ -1484,6 +1461,25 @@ body.ie ._ibg img {
   font-weight: 400;
 }
 
+.box-contacts__phone {
+  color: #040d0d;
+  font-size: 22px;
+  margin: 0px 0px 5px 0px;
+  font-weight: 500;
+}
+
+.box-contacts__days {
+  margin: 0px 0px 5px 0px;
+  color: #040d0d;
+  font-size: 13px;
+}
+
+.box-contacts__email {
+  font-size: 13px;
+  color: #4673ab;
+  text-decoration: underline;
+}
+
 .search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1509,6 +1505,23 @@ body.ie ._ibg img {
   -webkit-transform: translate(0%, -50%);
       -ms-transform: translate(0%, -50%);
           transform: translate(0%, -50%);
+}
+
+.info-shopping__buy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.info-shopping__search-icon {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: url("../img/icons/search.png") 0 0 no-repeat;
+  margin: 0px 20px 0px 0px;
 }
 
 .info-shopping__cart {
@@ -1553,6 +1566,7 @@ body.ie ._ibg img {
 }
 
 .cart-shopping-info {
+  width: 100%;
   display: inline-block;
   height: 52px;
   background: url("../img/icons/cart-bg.jpg") 0 0 no-repeat;
@@ -1576,6 +1590,7 @@ body.ie ._ibg img {
 .cart-shopping-info:before {
   content: "";
   background: url(../img/sprite.svg#cart) no-repeat;
+  background-color: #fff;
   width: 26px;
   height: 23px;
   position: absolute;
@@ -1634,15 +1649,16 @@ body.ie ._ibg img {
 }
 
 .contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
 }
 
 .contacts__bubble {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 98px;
           flex: 0 0 98px;
+  width: 98px;
   -ms-flex-item-align: baseline;
       align-self: baseline;
   text-align: center;
@@ -1686,66 +1702,56 @@ body.ie ._ibg img {
   border-bottom: 1px dotted;
 }
 
+.contacts__box {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 198px;
+          flex: 0 0 198px;
+  width: 198px;
+}
+
 .social-contacts {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.social-contacts__icons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 16px;
-}
-
-.social-contacts__whatsapp {
-  color: #4fc95d;
-}
-
-.social-contacts__viber {
-  color: #7b519c;
-}
-
-.social-contacts__chat {
-  color: #040d0d;
-  font-size: 13px;
   margin: 0px 0px 3px 0px;
 }
 
-.box-contacts {
+.social-contacts__chat {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  margin: 0px 0px 3px 0px;
 }
 
-.box-contacts__phone {
-  color: #040d0d;
-  font-size: 22px;
-  margin: 0px 0px 5px 0px;
-  font-weight: 500;
+.social-contacts__skype {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
-.box-contacts__days {
-  margin: 0px 0px 5px 0px;
+.chat-social__whatsapp {
+  fill: #4dc95c;
+  margin: 0px 3px 0px 0px;
+  font-size: 16px;
+}
+
+.chat-social__viber {
+  fill: #7b519c;
+  margin: 0px 5px 0px 0px;
+  font-size: 16px;
+}
+
+.chat-social__tel {
   color: #040d0d;
   font-size: 13px;
 }
 
-.box-contacts__email {
-  font-size: 13px;
-  color: #4673ab;
-  text-decoration: underline;
+.chat-social__skype {
+  fill: #00adef;
+  margin: 0px 5px 0px 0px;
+  font-size: 16px;
 }
 
-.search {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.chat-social__login {
+  color: #040d0d;
+  font-size: 13px;
 }
 
 .footer {
@@ -1960,22 +1966,6 @@ body.ie ._ibg img {
     background: url("../img/icons/catalog/pagging-arrow-active.png") 0 0/100% no-repeat;
   }
 
-  ._arrow:hover {
-    background: url("../img/icons/main/content/arrowSliderH.png") 0 0/100% no-repeat;
-  }
-
-  ._arrow_prev:hover {
-    -webkit-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-
-  ._arrow_next:hover {
-    -webkit-transform: rotate(180deg);
-    -ms-transform: rotate(180deg);
-    transform: rotate(180deg);
-  }
-
   .pagging__arrow:hover {
     background: url("../img/icons/catalog/pagging-arrow-active.png") center 0/100% no-repeat;
     -webkit-transform: rotate(-180deg);
@@ -1991,8 +1981,20 @@ body.ie ._ibg img {
     border: none;
   }
 
+  .box-contacts__email:hover {
+    text-decoration: none;
+  }
+
+  .info-shopping__search-icon {
+    display: none;
+  }
+
   .header-menu__link:hover {
     text-shadow: 0 0 3px white;
+  }
+
+  .social-contacts__skype {
+    display: none;
   }
 
   .footer__body {
@@ -2025,9 +2027,37 @@ body.ie ._ibg img {
   }
 }
 
+@media (max-width: 1192px) {
+  .info-header__label_text {
+    font-size: 13px;
+  }
+
+  .info-header__label_text span {
+    font-size: 16px;
+  }
+
+  .contacts__bubble {
+    margin: 0px 20px 0px 0px;
+  }
+}
+
+@media (max-width: 1180px) {
+  .info-header__column {
+    padding-right: 1.69492vw;
+  }
+
+  .info-header__column:last-child {
+    padding: 0;
+  }
+}
+
 @media (max-width: 991.98px) {
   .select__title {
     font-size: 18px;
+  }
+
+  .info-header__column:nth-child(3) {
+    display: none;
   }
 
   .footer__payments {
@@ -2167,10 +2197,10 @@ body.ie ._ibg img {
 .rating__line{background:url("../img/icons/bg_rating.svg") 0 0 no-repeat}
 .rating__activeline{background:url("../img/icons/bg_rating_active.svg") 0 0 no-repeat}
 .quantity__button{background:url("../img/icons/catalog/pagging-arrow.webp") 0 0/100% no-repeat}
-._arrow{background:url("../img/icons/main/content/arrowSlider.webp") 0 0/100% no-repeat}
 #map{background:url("../img/icons/loading.gif") center/50px no-repeat}
 .pagging__arrow{background:url("../img/icons/catalog/pagging-arrow.webp") center 0/100% no-repeat}
 .form-popupInfo__input_date{background:url("../img/icons/Calendar.svg") right 2.6rem center no-repeat, url("../img/icons/Rectangle 3.svg") right 2rem center no-repeat}
+.info-shopping__search-icon{background:url("../img/icons/search.webp") 0 0 no-repeat}
 .info-shopping__favorites{background:url("../img/icons/heart.webp") left center no-repeat}
 .info-shopping__compare{background:url(../img/sprite.svg#compare) no-repeat}
 .cart-shopping-info{background:url("../img/icons/cart-bg.webp") 0 0 no-repeat}
@@ -2199,13 +2229,28 @@ body.ie ._ibg img {
 @supports (-webkit-appearance:none){
 .quantity__button_plus:hover{background:url("../img/icons/catalog/pagging-arrow-active.webp") 0 0/100% no-repeat}
 .quantity__button_minus:hover{background:url("../img/icons/catalog/pagging-arrow-active.webp") 0 0/100% no-repeat}
-._arrow:hover{background:url("../img/icons/main/content/arrowSliderH.webp") 0 0/100% no-repeat}
 .pagging__arrow:hover{background:url("../img/icons/catalog/pagging-arrow-active.webp") center 0/100% no-repeat}
 }
 
 }
 
  @media (min-width: 992px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1192px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media (max-width: 1180px){
 
 @supports (-webkit-appearance:none){
 
