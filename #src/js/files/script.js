@@ -30,12 +30,20 @@ if (isMobile.any()) {
 let menuActions = document.querySelector('.menu__actions');
 let menuBody = document.querySelector('.menu__body');
 let iconMenu = document.querySelector('.icon-menu');
+let menuDropdowns = document.querySelectorAll('.menu__dropdown');
 
 menuActions.addEventListener('click', function (e) {
 	iconMenu.classList.toggle('_active');
 	menuBody.classList.toggle('_active');
 	_slideToggle(menuBody);
 });
+
+for (let i = 0; i < menuDropdowns.length; i++) {
+	menuDropdowns[i].addEventListener('click', function (e) {
+		e.preventDefault();
+		_slideToggle(menuDropdowns[i].querySelector('.dropdown__content'));
+	});
+}
 
 let searchPageSelect = document.querySelector('.search-page__title');
 let categoriesSearch = document.querySelector('.categories-search');
