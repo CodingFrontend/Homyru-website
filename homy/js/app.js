@@ -357,12 +357,14 @@ if (isMobile.any()) {
 	}
 }
 
-let menuPageBurger = document.querySelector('.menu-page__burger');
-let menuPageBody = document.querySelector('.menu-page__body');
+let menuActions = document.querySelector('.menu__actions');
+let menuBody = document.querySelector('.menu__body');
+let iconMenu = document.querySelector('.icon-menu');
 
-menuPageBurger.addEventListener('click', function (e) {
-	this.classList.toggle('_active');
-	_slideToggle(menuPageBody);
+menuActions.addEventListener('click', function (e) {
+	iconMenu.classList.toggle('_active');
+	menuBody.classList.toggle('_active');
+	_slideToggle(menuBody);
 });
 
 let searchPageSelect = document.querySelector('.search-page__title');

@@ -1,23 +1,40 @@
 <header class="header">
-	<div class="header__top">
-		<div class='header__container _container'>
-			<div class="header__menu">
-				<div class="header-menu__icon icon-menu">
-					<span></span>
-					<span></span>
-					<span></span>
+	<div class="header__top top-header">
+		<div class='top-header__container _container'>
+			<div class="top-header__menu menu">
+				<div class="menu__actions">
+					<div class="menu__icon icon-menu">
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+					<div class="menu__label">Меню</div>
 				</div>
-				<nav class="header-menu">
-					<ul class="header-menu-list">
-						<li><a href="" class="header-menu__link"><span>Каталог</span></a></li>
-						<li><a href="" class="header-menu__link"><span>О компании</span></a></li>
-						<li><a href="" class="header-menu__link">Оплата и доставка</a></li>
-						<li><a href="" class="header-menu__link">Гарантии и возврат</a>
-						<li><a href="" class="header-menu__link">Сотрудничество</a>
-						<li><a href="" class="header-menu__link">Услуги</a>
-						<li><a href="" class="header-menu__link">Решения</a>
-						<li><a href="" class="header-menu__link">Техподдержка</a>
-						<li><a href="" class="header-menu__link">Контакты</a></a>
+				<nav class="menu__body">
+					<ul class="menu__list">
+						<li class="menu__dropdown">
+							<a href="" class="menu__link"><span>Каталог</span></a>
+							<div class="dropdown__content">
+								<a href="" class="dropdown__link">Link 1</a>
+								<a href="" class="dropdown__link">Link 2</a>
+								<a href="" class="dropdown__link">Link 3</a>
+							</div>
+						</li>
+						<li class="menu__dropdown">
+							<a href="" class="menu__link"><span>О компании</span></a>
+							<div class="dropdown__content">
+								<a href="" class="dropdown__link">Link 1</a>
+								<a href="" class="dropdown__link">Link 2</a>
+								<a href="" class="dropdown__link">Link 3</a>
+							</div>
+						</li>
+						<li><a href="" class="menu__link">Оплата и доставка</a></li>
+						<li><a href="" class="menu__link">Гарантии и возврат</a>
+						<li><a href="" class="menu__link">Сотрудничество</a>
+						<li><a href="" class="menu__link">Услуги</a>
+						<li><a href="" class="menu__link">Решения</a>
+						<li><a href="" class="menu__link">Техподдержка</a>
+						<li><a href="" class="menu__link">Контакты</a></a>
 					</ul>
 				</nav>
 			</div>
@@ -56,7 +73,7 @@
 									<svg class="img  chat-social__skype icon icon-skype">
 										<use xlink:href="img/sprite.svg#skype"></use>
 									</svg>
-									<div class=" chat-social__login">skype-on.06</div>
+									<div class=" chat-social__skype-login">skype-on.06</div>
 								</a>
 							</div>
 							<a href="mailto:info@homy.ru" class="box-contacts__email">info@homy.ru</a>
@@ -75,16 +92,15 @@
 						</div>
 						<button type="submit" class="search__btn btn">Искать</button>
 					</form>
+
 				</div>
 				<div class="info-header__column">
+					<a href="" class="info-header__search-icon"></a>
 					<div class="info-header__shopping-info info-shopping">
-						<div class="info-shopping__buy">
-							<a href="" class="info-shopping__search-icon"></a>
-							<a href="" class="info-shopping__cart cart-shopping-info">
-								<div class="cart-shopping-info__label">Корзина</div>
-								<div class="cart-shopping-info__amount"><span>4</span> / 4 000р</div>
-							</a>
-						</div>
+						<a href="" class="info-shopping__cart cart-shopping-info">
+							<div class="cart-shopping-info__label">Корзина</div>
+							<div class="cart-shopping-info__amount"><span>4</span> / 4 000р</div>
+						</a>
 						<div class="info-shopping__actions">
 							<a href="" class="info-shopping__favorites">Избранное <span>7</span></a>
 							<a href="" class="info-shopping__compare">Сравнение <span>2</span></a>
