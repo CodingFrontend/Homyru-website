@@ -35,6 +35,9 @@
 				border: none;
 			}
 		}
+		@media (max-width: 700px) {
+			font-size: 0;
+		}
 	}
 
 	&__profile {
@@ -60,44 +63,13 @@
 		align-items: center;
 	}
 }
-.dropdown {
-	&__content {
-		min-width: 100%;
-		display: none;
-		background-color: #040d0d;
-		@media (min-width: $md2+px) {
-			position: absolute;
-			top: 100%;
-			left: 0;
-			padding: 0px 0px 20px 0px;
-		}
-	}
-	&__link {
-		display: block;
-		width: 100%;
-		padding: 10px 25px;
-		font-size: 13px;
-		font-weight: 300;
-		color: #bdc3c5;
-		transition: all 0.3s ease;
-		&:last-child {
-			padding-bottom: 0;
-		}
-		@media (min-width: $md2+px) {
-			&:hover {
-				background-color: #323232;
-			}
-		}
-	}
-}
-
 .menu {
 	&__actions {
 	}
 	&__body {
 		@media (max-width: $md2+px) {
 			display: none;
-			padding: 55px 20px 0px 20px;
+			padding: 50px 0px 15px 0px;
 			width: 100%;
 			&:before {
 				content: "";
@@ -112,50 +84,40 @@
 	}
 
 	&__list {
-		@media (min-width: $md2+px) {
-			display: flex;
-		}
-		li {
-			text-align: center;
-			padding: 15px 25px;
-			border-right: 1px dotted #323232;
-			transition: all 0.3s ease;
-			&:first-child {
-				padding-left: 0;
-			}
-			&:last-child {
-				border: none;
-				padding: 15px 0px 15px 25px;
-			}
+		> li {
 			@media (min-width: $md2+px) {
+				height: 40px;
+				display: flex;
+				align-items: center;
+				transition: all 0.3s ease;
+				&:first-child {
+					padding-left: 0;
+				}
+				&:last-child {
+					padding-right: 0;
+					.menu__link {
+						border: none;
+					}
+				}
+				cursor: pointer;
 				&:hover {
 					background-color: #323232;
 				}
 			}
-			@media (max-width: $maxWidthContainer+px) {
-				padding: 15px 22 / $maxWidthContainer * 100vw 15px 22 / $maxWidthContainer * 100vw;
-				&:last-child {
-					padding-right: 0px;
-				}
-			}
-			@media (max-width: 1110px) {
-				padding: 15px 15 / $maxWidthContainer * 100vw 15px 15 / $maxWidthContainer * 100vw;
-				&:last-child {
-					padding-right: 0px;
-				}
-			}
 			@media (max-width: $md2+px) {
-				padding: 10px 0px;
-				border-right: none;
+				margin: 0px 0px 15px 0px;
 				&:last-child {
-					padding: 10px 0px;
+					margin: 0px 0px 0px 0px;
 				}
 			}
+		}
+		@media (min-width: $md2+px) {
+			display: flex;
 		}
 	}
 	&__dropdown {
 		position: relative;
-		@media (min-width: $md1+px) {
+		@media (min-width: $md2+px) {
 			&:hover {
 				.dropdown__content {
 					display: block;
@@ -164,12 +126,74 @@
 		}
 	}
 	&__link {
+		padding: 5px 23px;
+		border-right: 1px dotted #323232;
+		display: block;
 		font-size: 13px;
 		font-weight: 300;
 		color: #bdc3c5;
+		text-align: center;
+		white-space: nowrap;
 		span {
 			padding: 0px 18px 0px 0px;
 			background: url("../img/icons/arrow-down.png") right no-repeat;
+		}
+		@media (max-width: $maxWidthContainer+px) {
+			padding: 15px 20 / $maxWidthContainer * 100vw 15px 20 / $maxWidthContainer * 100vw;
+		}
+		@media (max-width: 1110px) {
+			padding: 15px 15 / $maxWidthContainer * 100vw 15px 15 / $maxWidthContainer * 100vw;
+		}
+		@media (max-width: $md2+px) {
+			border-right: none;
+			padding: 0;
+			font-size: 16px;
+		}
+	}
+}
+.dropdown {
+	&__content {
+		list-style: none;
+		display: none;
+		background-color: #040d0d;
+		padding: 10px 0px 10px 0px;
+		> li {
+			@media (min-width: $md2+px) {
+				cursor: pointer;
+				transition: all 0.3s ease;
+				&:hover {
+					background-color: #323232;
+				}
+			}
+			@media (max-width: $md2+px) {
+				margin: 0px 0px 10px 0px;
+				&:last-child {
+					margin: 0px 0px 0px 0px;
+				}
+			}
+		}
+		@media (min-width: $md2+px) {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			width: 150px;
+			z-index: 100;
+		}
+		@media (max-width: $md2+px) {
+			padding: 10px 0px 0px 0px;
+		}
+	}
+	&__link {
+		display: block;
+		font-size: 13px;
+		line-height: 15px;
+		font-weight: 300;
+		color: #bdc3c5;
+		padding: 10px 25px;
+		@media (max-width: $md2+px) {
+			text-align: center;
+			padding: 0px;
+			font-size: 15px;
 		}
 	}
 }
@@ -252,13 +276,17 @@
 			}
 			&:last-child {
 				display: flex;
-				position: relative;
 			}
 		}
 		@media (max-width: $maxWidthContainer+px) {
 			padding-right: 20 / $maxWidthContainer * 100vw;
 			&:last-child {
 				padding: 0;
+			}
+		}
+		@media (max-width: 820px) {
+			&:nth-child(2) {
+				flex: 1 1 auto;
 			}
 		}
 	}
@@ -317,9 +345,7 @@
 		width: 22px;
 		height: 22px;
 		background: url("../img/icons/search.png") 0 0 no-repeat;
-		position: absolute;
-		top: 15px;
-		left: -42px;
+		margin: 15px 20px 0px 0px;
 		@media (min-width: $md2+px) {
 			display: none;
 		}
@@ -331,7 +357,68 @@
 	&__shopping-info {
 	}
 }
+.contacts {
+	display: flex;
+	justify-content: center;
+	@media (max-width: $md2+px) {
+		margin-top: -15px;
+	}
+	&__bubble {
+		flex: 0 0 98px;
+		width: 98px;
+		align-self: baseline;
+		text-align: center;
+		padding: 10px;
+		font-size: 12px;
+		line-height: 18px / 12px * 100%;
+		text-transform: uppercase;
+		color: #4673ab;
+		border: 2px solid #dbdee6;
+		border-radius: 10px;
+		position: relative;
+		margin: 0px 30px 0px 0px;
+		&:before,
+		&:after {
+			content: "";
+			width: 0px;
+			height: 0px;
+			position: absolute;
+			border-left: 0px;
+		}
+		&:before {
+			right: -17px;
+			top: 12px;
+			border: 16px solid;
+			border-left: 0px;
+			border-color: #dbdee6 transparent transparent #dbdee6;
+		}
+		&:after {
+			top: 14px;
+			right: -12px;
+			border: 14px solid;
+			border-left: 0px;
+			border-color: #fff transparent transparent transparent;
+		}
+		span {
+			border-bottom: 1px dotted;
+		}
+		@media (max-width: $md1+px) {
+			margin: 0px 20px 0px 0px;
+		}
+		@media (max-width: 820px) {
+			display: none;
+		}
+	}
+
+	&__box {
+		flex: 0 0 198px;
+		width: 198px;
+	}
+}
 .box-contacts {
+	@media (max-width: 820px) {
+		text-align: right;
+	}
 	&__social {
 	}
 	&__phone {
@@ -356,6 +443,49 @@
 				text-decoration: none;
 			}
 		}
+	}
+}
+.social-contacts {
+	margin: 0px 0px 3px 0px;
+	display: inline-block;
+	&__chat {
+		display: flex;
+		margin: 0px 0px 3px 0px;
+	}
+	&__skype {
+		display: inline-flex;
+		@media (min-width: $md2+px) {
+			display: none;
+		}
+	}
+}
+.chat-social {
+	&__whatsapp {
+		fill: #4dc95c;
+		margin: 0px 3px 0px 0px;
+		font-size: 16px;
+	}
+
+	&__viber {
+		fill: #7b519c;
+		margin: 0px 5px 0px 0px;
+		font-size: 16px;
+	}
+
+	&__tel {
+		color: #040d0d;
+		font-size: 13px;
+	}
+
+	&__skype {
+		fill: #00adef;
+		margin: 0px 5px 0px 0px;
+		font-size: 16px;
+	}
+
+	&__skype-login {
+		color: #040d0d;
+		font-size: 13px;
 	}
 }
 .search {
@@ -439,6 +569,13 @@
 		z-index: 2;
 		transform: translate(0%, -50%);
 	}
+	@media (max-width: 700px) {
+		padding: 0px 0px 0px 0px;
+		&__label,
+		&__amount {
+			font-size: 0;
+		}
+	}
 	&__label {
 		font-weight: 500;
 		margin-bottom: 5px;
@@ -450,98 +587,5 @@
 			text-decoration: underline;
 			color: #4673ab;
 		}
-	}
-}
-.contacts {
-	display: inline-flex;
-	&__bubble {
-		flex: 0 0 98px;
-		width: 98px;
-		align-self: baseline;
-		text-align: center;
-		padding: 10px;
-		font-size: 12px;
-		line-height: 18px / 12px * 100%;
-		text-transform: uppercase;
-		color: #4673ab;
-		border: 2px solid #dbdee6;
-		border-radius: 10px;
-		position: relative;
-		margin: 0px 30px 0px 0px;
-		@media (max-width: $md1+px) {
-			margin: 0px 20px 0px 0px;
-		}
-		&:before,
-		&:after {
-			content: "";
-			width: 0px;
-			height: 0px;
-			position: absolute;
-			border-left: 0px;
-		}
-		&:before {
-			right: -17px;
-			top: 12px;
-			border: 16px solid;
-			border-left: 0px;
-			border-color: #dbdee6 transparent transparent #dbdee6;
-		}
-		&:after {
-			top: 14px;
-			right: -12px;
-			border: 14px solid;
-			border-left: 0px;
-			border-color: #fff transparent transparent transparent;
-		}
-		span {
-			border-bottom: 1px dotted;
-		}
-	}
-
-	&__box {
-		flex: 0 0 198px;
-		width: 198px;
-	}
-}
-.social-contacts {
-	margin: 0px 0px 3px 0px;
-	&__chat {
-		display: flex;
-		margin: 0px 0px 3px 0px;
-	}
-	&__skype {
-		display: flex;
-		@media (min-width: $md2+px) {
-			display: none;
-		}
-	}
-}
-.chat-social {
-	&__whatsapp {
-		fill: #4dc95c;
-		margin: 0px 3px 0px 0px;
-		font-size: 16px;
-	}
-
-	&__viber {
-		fill: #7b519c;
-		margin: 0px 5px 0px 0px;
-		font-size: 16px;
-	}
-
-	&__tel {
-		color: #040d0d;
-		font-size: 13px;
-	}
-
-	&__skype {
-		fill: #00adef;
-		margin: 0px 5px 0px 0px;
-		font-size: 16px;
-	}
-
-	&__skype-login {
-		color: #040d0d;
-		font-size: 13px;
 	}
 }

@@ -369,9 +369,11 @@ menuActions.addEventListener('click', function (e) {
 });
 
 for (let i = 0; i < menuDropdowns.length; i++) {
-	menuDropdowns[i].addEventListener('click', function (e) {
+	let dropdownContent = menuDropdowns[i].querySelector('.dropdown__content');
+	let menuLink = menuDropdowns[i].querySelector('.menu__link');
+	menuLink.addEventListener('click', function (e) {
 		e.preventDefault();
-		_slideToggle(menuDropdowns[i].querySelector('.dropdown__content'));
+		_slideToggle(dropdownContent);
 	});
 }
 
