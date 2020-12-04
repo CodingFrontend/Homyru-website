@@ -1,3 +1,38 @@
+$(window).resize(function () {
+	adaptive_function();
+});
+function adaptive_header(w) {
+	let headerColumn_0 = $('.info-header__column').eq(0),
+		boxContacts = $('.box-contacts'),
+		headerColumn_3 = $('.info-header__column').eq(3),
+		contactsPhone = $('.box-contacts__phone'),
+		chatSocial = $('.social-contacts__chat'),
+		skypeSocial = $('.social-contacts__skype'),
+		contactsEmail = $('.box-contacts__email'),
+		socialContacts = $('.social-contacts');
+
+	if (w < 700) {
+		if ((contactsPhone, chatSocial, skypeSocial, contactsEmail).filter('done').length == 0) {
+			(contactsPhone, chatSocial, skypeSocial, contactsEmail).addClass('done');
+			headerColumn_0.append(contactsPhone, chatSocial);
+			headerColumn_3.append(contactsEmail, skypeSocial);
+		}
+	} else {
+		(contactsPhone, chatSocial, skypeSocial, contactsEmail).removeClass('done');
+		contactsPhone.prependTo(boxContacts);
+		contactsEmail.appendTo(boxContacts);
+		socialContacts.append(chatSocial, skypeSocial);
+	}
+}
+
+
+function adaptive_function() {
+	let w = $(window).outerWidth();
+	adaptive_header(w);
+}
+adaptive_function();
+
+
 var ua = window.navigator.userAgent;
 var msie = ua.indexOf("MSIE ");
 var isMobile = { Android: function () { return navigator.userAgent.match(/Android/i); }, BlackBerry: function () { return navigator.userAgent.match(/BlackBerry/i); }, iOS: function () { return navigator.userAgent.match(/iPhone|iPad|iPod/i); }, Opera: function () { return navigator.userAgent.match(/Opera Mini/i); }, Windows: function () { return navigator.userAgent.match(/IEMobile/i); }, any: function () { return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()); } };
@@ -1101,48 +1136,6 @@ ibg();
 // });
 //
 
-$(window).resize(function(event) {
-	adaptive_function();
-});
-function adaptive_header(w,h) {
-	let bottomHeaderColumn_1 = $('.bottom-header__column').eq(0);
-	let infoHeaderColumn = $('.info-header__column').eq(0);
-	let infoHeaderCart = $('.info-header__column_cart');
-	let pageSideNews = $('.page__side-news');
-	let pageSideReviews = $('.page__side-reviews');
-
-	if (w < 640.98) {
-		if(!bottomHeaderColumn_1.hasClass('done') && !infoHeaderColumn.hasClass('done') && !infoHeaderCart.hasClass('done')){
-			bottomHeaderColumn_1.addClass('done').prependTo($('.menu__body'));
-			infoHeaderColumn.addClass('done').appendTo($('.menu__body'));
-			infoHeaderCart.addClass('done').appendTo($('.contacts-header__item_forcart'));
-		}
-	} else {
-		bottomHeaderColumn_1.removeClass('done').prependTo($('.bottom-header__content'));
-		infoHeaderColumn.removeClass('done').prependTo($('.bottom-header__info'));
-		infoHeaderCart.removeClass('done').appendTo($('.bottom-header__info'));
-	}
-	if (pageSideNews.length && pageSideReviews.length) {
-		if (w < 991.98) {
-			if(!pageSideNews.hasClass('done') && !pageSideReviews.hasClass('done')) {
-				pageSideNews.addClass('done').appendTo($('.page__content'));
-				pageSideReviews.addClass('done').appendTo($('.page__content'));
-			}
-		} else {
-			pageSideNews.removeClass('done').appendTo($('.page__side'));
-			pageSideReviews.removeClass('done').appendTo($('.page__side'));
-		}
-	}
-}
-
-function adaptive_function() {
-	let w=$(window).outerWidth();
-	let h=$(window).outerHeight();
-	adaptive_header(w,h);
-}
-	adaptive_function();
-
-	
 //BildSlider
 let sliders = document.querySelectorAll('._swiper');
 if (sliders) {

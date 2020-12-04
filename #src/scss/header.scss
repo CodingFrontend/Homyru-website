@@ -8,6 +8,9 @@
 		align-items: center;
 		justify-content: space-between;
 		margin: 0px 0px 10px 0px;
+		@media (max-width: 700px) {
+			margin: 0px 0px 20px 0px;
+		}
 	}
 
 	&__region {
@@ -16,7 +19,7 @@
 		color: #323232;
 		a {
 			color: #4673ab;
-			border-bottom: 1px dashed;
+			border-bottom: 1px dotted;
 		}
 	}
 
@@ -269,13 +272,19 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	&__content {
+		display: flex;
+		@media (max-width: 700px) {
+			margin: 0px 5px 15px 0px;
+			justify-content: flex-end;
+		}
+	}
 	&__column {
+		display: flex;
+		flex-direction: column;
 		@media (max-width: $md2+px) {
 			&:nth-child(3) {
 				display: none;
-			}
-			&:last-child {
-				display: flex;
 			}
 		}
 		@media (max-width: $maxWidthContainer+px) {
@@ -289,10 +298,24 @@
 				flex: 1 1 auto;
 			}
 		}
+		@media (max-width: 700px) {
+			flex: 0 0 50%;
+			padding: 0px 0px;
+			&:nth-child(2) {
+				display: none;
+			}
+		}
 	}
 
 	&__logo {
-		flex: 0 0 200px;
+		display: inline-block;
+		img {
+			max-width: 100%;
+		}
+		@media (max-width: 700px) {
+			width: 148px;
+			margin: 0px 0px 15px 0px;
+		}
 	}
 
 	&__contacts {
@@ -346,6 +369,9 @@
 		height: 22px;
 		background: url("../img/icons/search.png") 0 0 no-repeat;
 		margin: 15px 20px 0px 0px;
+		@media (max-width: 700px) {
+			margin: 0px 20px 0px 0px;
+		}
 		@media (min-width: $md2+px) {
 			display: none;
 		}
@@ -426,12 +452,19 @@
 		font-size: 22px;
 		margin: 0px 0px 10px 0px;
 		font-weight: 500;
+		@media (max-width: 700px) {
+			font-size: 17px;
+			margin: 0px 0px 5px 0px;
+		}
 	}
 
 	&__days {
 		margin: 0px 0px 7px 0px;
 		color: #040d0d;
 		font-size: 13px;
+		@media (max-width: 700px) {
+			display: none;
+		}
 	}
 
 	&__email {
@@ -442,6 +475,10 @@
 			&:hover {
 				text-decoration: none;
 			}
+		}
+		@media (max-width: 700px) {
+			margin: 0px 0px 8px 0px;
+			text-align: right;
 		}
 	}
 }
@@ -456,6 +493,9 @@
 		display: inline-flex;
 		@media (min-width: $md2+px) {
 			display: none;
+		}
+		@media (max-width: 700px) {
+			justify-content: flex-end;
 		}
 	}
 }
@@ -507,9 +547,7 @@
 }
 .info-shopping {
 	&__cart {
-		margin: 0px 0px 5px 0px;
 	}
-
 	&__actions {
 		font-size: 11px;
 		line-height: 17px;
@@ -517,6 +555,9 @@
 		color: #040d0d;
 		display: flex;
 		white-space: nowrap;
+		@media (max-width: 700px) {
+			display: none;
+		}
 	}
 
 	&__favorites {
@@ -545,45 +586,59 @@
 	}
 }
 .cart-shopping-info {
-	width: 100%;
-	display: inline-block;
-	height: 52px;
-	background: url("../img/icons/cart-bg.jpg") 0 0 no-repeat;
-	padding: 15px 15px 15px 60px;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	font-size: 13px;
-	color: #040d0d;
-	position: relative;
-	border-radius: 10px;
-	&:before {
-		content: "";
-		background: url(../img/sprite.svg#cart) no-repeat;
-		background-color: #fff;
-		width: 26px;
-		height: 23px;
-		position: absolute;
-		top: 50%;
-		left: 17px;
-		z-index: 2;
-		transform: translate(0%, -50%);
+	background: none;
+	padding: 0px 0px 0px 0px;
+	@media (min-width: 700px) {
+		margin: 0px 0px 5px 0px;
+		height: 52px;
+		background: url("../img/icons/cart-bg.jpg") 0 0 no-repeat;
+		padding: 10px 0px 10px 15px;
+		display: flex;
+		align-items: center;
+		font-size: 13px;
+		color: #040d0d;
+		position: relative;
+		border-radius: 10px;
 	}
-	@media (max-width: 700px) {
-		padding: 0px 0px 0px 0px;
-		&__label,
-		&__amount {
-			font-size: 0;
+	&__icon {
+		display: inline-block;
+		margin: 0px 15px 0px 0px;
+		position: relative;
+		@media (max-width: 700px) {
+			margin: 0px 0px 0px 0px;
+			&:before {
+				content: "10";
+				position: absolute;
+				top: -12px;
+				right: -6px;
+				background: url("../img/icons/cart-bg.jpg") center no-repeat;
+				padding: 3px 5px;
+				color: #ff5816;
+				font-size: 10px;
+				font-weight: 30;
+				border-radius: 4px;
+			}
+		}
+		svg {
+			width: 26px;
+			height: 23px;
+		}
+	}
+	&__content {
+		@media (max-width: 700px) {
+			display: none;
 		}
 	}
 	&__label {
+		display: inline-block;
 		font-weight: 500;
 		margin-bottom: 5px;
+		color: #040d0d;
 	}
 
 	&__amount {
 		font-weight: 400;
-		span {
+		a {
 			text-decoration: underline;
 			color: #4673ab;
 		}
