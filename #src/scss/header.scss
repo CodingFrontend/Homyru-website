@@ -34,7 +34,8 @@
 
 	&__login {
 		margin: 0px 20px 0px 0px;
-		border-bottom: 1px solid #4673ab;
+		color: #4673ab;
+		border-bottom: 1px solid;
 		transition: all 0.3s ease;
 		@media (min-width: $md2+px) {
 			&:hover {
@@ -47,7 +48,8 @@
 	}
 
 	&__profile {
-		border-bottom: 1px solid #4673ab;
+		color: #4673ab;
+		border-bottom: 1px solid;
 		transition: all 0.3s ease;
 		@media (min-width: $md2+px) {
 			&:hover {
@@ -99,7 +101,9 @@
 				align-items: center;
 				transition: all 0.3s ease;
 				&:first-child {
-					padding-left: 0;
+					.menu__link {
+						padding-left: 0;
+					}
 				}
 				&:last-child {
 					padding-right: 0;
@@ -134,7 +138,7 @@
 		}
 	}
 	&__link {
-		padding: 5px 23px;
+		padding: 5px 25px;
 		border-right: 1px dotted #323232;
 		display: block;
 		font-size: 13px;
@@ -147,10 +151,10 @@
 			background: url("../img/icons/arrow-down.png") right no-repeat;
 		}
 		@media (max-width: $maxWidthContainer+px) {
-			padding: 15px 20 / $maxWidthContainer * 100vw 15px 20 / $maxWidthContainer * 100vw;
+			padding: 15px 23 / $maxWidthContainer * 100vw 15px 23 / $maxWidthContainer * 100vw;
 		}
 		@media (max-width: 1110px) {
-			padding: 15px 15 / $maxWidthContainer * 100vw 15px 15 / $maxWidthContainer * 100vw;
+			padding: 15px 18 / $maxWidthContainer * 100vw 15px 18 / $maxWidthContainer * 100vw;
 		}
 		@media (max-width: $md2+px) {
 			border-right: none;
@@ -651,6 +655,9 @@
 }
 .header-slider {
 	margin: 0px 0px 20px 0px;
+	@media (max-width: 1170px) {
+		display: none;
+	}
 	&__container {
 		position: relative;
 	}
@@ -751,7 +758,7 @@
 			}
 		}
 		&_prev {
-			left: 20px;
+			left: 10px;
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
 			&:after {
@@ -766,7 +773,7 @@
 		}
 
 		&_next {
-			right: 20px;
+			right: 10px;
 			border-top-right-radius: 10px;
 			border-bottom-right-radius: 10px;
 			&.swiper-button-disabled {
