@@ -1,4 +1,29 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
+.arrow {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	width: 16px;
+	height: 44px;
+	background: url("../img/icons/arrow-slider.png") 0 0 no-repeat;
+	&_prev {
+		left: 20px;
+		transform: translate(0%, -50%);
+		@media (max-width: $md2+px) {
+			left: 10px;
+		}
+	}
+
+	&_next {
+		right: 20px;
+		transform: translate(0%, -50%) rotate(180deg);
+		@media (max-width: $md2+px) {
+			right: 10px;
+		}
+	}
+}
+
+
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

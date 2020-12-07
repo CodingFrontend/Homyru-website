@@ -11,7 +11,7 @@ function adaptive_header(w) {
 		contactsEmail = $('.box-contacts__email'),
 		socialContacts = $('.social-contacts');
 
-	if (w < 700) {
+	if (w < 700.98) {
 		if ((contactsPhone, chatSocial, skypeSocial, contactsEmail).filter('done').length == 0) {
 			(contactsPhone, chatSocial, skypeSocial, contactsEmail).addClass('done');
 			headerColumn_0.append(contactsPhone, chatSocial);

@@ -32,7 +32,7 @@ $maxWidthContainer: 1180;
 $md1: $maxWidthContainer + 12;
 $md2: 991.98;
 $md3: 767.98;
-$md4: 479.98;
+$md4: 700.98;
 
 $color: #1ab9ce;
 // $fa-font-path: "../webfonts";
@@ -96,13 +96,16 @@ body {
 }
 .page {
 	flex: 1 1 auto;
-	padding-top: 20px;
 }
 .page {
 	&__main {
 	}
 }
 .main-page {
+	margin: 0px 0px 50px 0px;
+	@media (max-width: $md4 + px) {
+		display: none;
+	}
 	&__container {
 		display: flex;
 	}
@@ -116,14 +119,28 @@ body {
 }
 .side-news {
 	flex: 0 0 265px;
+	@media (max-width: $md2+px) {
+		flex: 0 0 225px;
+	}
+	@media (max-width: $md3+px) {
+		flex: 0 0 216px;
+	}
 	&__title {
 		display: inline-block;
 		width: 100%;
 		font-size: 22px;
-		padding: 0px 0px 10px 0px;
+		padding: 10px 0px 10px 0px;
 		border-bottom: 1px solid #dbdee6;
 		color: #2c3333;
-		margin: 0px 0px 32px 0px;
+		margin: 0px 0px 30px 0px;
+		text-transform: uppercase;
+		font-weight: 500;
+		@media (max-width: $md2+px) {
+			font-size: 21px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 20px;
+		}
 	}
 
 	&__items {
@@ -177,13 +194,19 @@ body {
 		padding: 0px 0px 0px 15px;
 		line-height: 18px;
 		font-size: 13px;
+		@media (max-width: $md2+px) {
+			line-height: 17px;
+		}
+		@media (max-width: $md3+px) {
+			font-size: 12px;
+		}
 	}
 
 	&__label {
 		display: inline-block;
 		color: #4673ab;
 		transition: all 0.3s ease;
-		margin: 0px 0px 5px 0px;
+		font-weight: 500;
 		&:hover {
 			color: #ff5816;
 			text-decoration: underline;
@@ -195,7 +218,7 @@ body {
 	}
 	&__all {
 		display: inline-block;
-		margin: 18px 0px 0px 0px;
+		margin: 15px 0px 0px 0px;
 		font-weight: 300;
 		color: #4673ab;
 		text-decoration: underline;
@@ -203,6 +226,9 @@ body {
 }
 .content-main {
 	padding: 0px 0px 0px 30px;
+	@media (max-width: $md2+px) {
+		padding: 0px 0px 0px 20px;
+	}
 	&__title {
 		padding: 15px 35px;
 		background-color: #e3e5eb;
@@ -212,7 +238,24 @@ body {
 		color: #131a1a;
 		font-weight: 400;
 		border-radius: 10px;
-		margin: 0px 0px 30px 0px;
+		margin: 0px 0px 25px 0px;
+		@media (max-width: 1154px) {
+			font-size: 14px;
+		}
+		@media (max-width: 1070px) {
+			font-size: 13px;
+		}
+		@media (max-width: 1010px) {
+			font-size: 12px;
+		}
+		@media (max-width: 910px) {
+			font-size: 11px;
+			padding: 15px 17px;
+		}
+		@media (max-width: 825px) {
+			font-size: 9px;
+			padding: 15px 7px;
+		}
 		&_items {
 			font-weight: 700;
 		}
@@ -229,14 +272,20 @@ body {
 .mainslider {
 	position: relative;
 	&__body {
-		padding: 45px 65px 52px 65px;
 		border-radius: 10px;
 	}
 
 	&__slide {
+		padding: 43px 65px 52px 65px;
+		position: relative;
+		@media (max-width: $md2+px) {
+			padding: 40px 30px 50px 30px;
+		}
 	}
 
 	&__content {
+		position: relative;
+		z-index: 2;
 	}
 
 	&__title {
@@ -252,6 +301,12 @@ body {
 			color: #ff5816;
 			font-weight: 500;
 		}
+		@media (max-width: $md2+px) {
+			font-size: 16px;
+			span {
+				font-size: 20px;
+			}
+		}
 	}
 
 	&__label {
@@ -261,13 +316,19 @@ body {
 		color: #fff;
 		font-weight: 300;
 		margin: 0px 0px 40px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 11px;
+		}
 	}
 
 	&__list {
 		font-weight: 300;
 		color: #fff;
 		font-size: 13px;
-		margin: 0px 0px 35px 0px;
+		margin: 0px 0px 38px 0px;
+		@media (max-width: $md2+px) {
+			font-size: 10px;
+		}
 		li {
 			padding: 0px 0px 0px 20px;
 			margin: 0px 0px 10px 0px;
@@ -293,35 +354,133 @@ body {
 	}
 
 	&__image {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
 	}
 
 	&__controls {
 	}
 
 	&__pagging {
+		position: absolute;
+		right: 20px;
+		bottom: 20px;
+		.swiper-pagination-bullet {
+			display: inline-block;
+			width: 15px;
+			height: 15px;
+			background-color: #fff;
+			border-radius: 3px;
+			margin: 0px 3px 0px 0px;
+			&-active {
+				background-color: #ff5816;
+			}
+		}
 	}
 }
 .controls {
 	&__arrow {
-		display: inline-block;
-		position: absolute;
-		top: 50%;
-		width: 16px;
-		height: 44px;
-		background: url("../img/icons/arrow-slider.png") 0 0 no-repeat;
-		transform: translate(0%, -50%);
+	}
+}
+
+.page {
+	&__new {
+	}
+}
+.new-page {
+	&__container {
+	}
+
+	&__top {
+	}
+
+	&__content {
+		position: relative;
+	}
+
+	&__items {
+	}
+
+	&__controls {
+	}
+}
+.top-new {
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 35px 0px;
+	span {
+		flex: 1 1 auto;
+		height: 1px;
+		background-color: #dbdee6;
+	}
+	&__title {
+		color: #040d0d;
+		padding: 0px 20px 0px 0px;
+		text-transform: uppercase;
+		font-weight: 500;
+		font-size: 22px;
+	}
+
+	&__all {
+		font-weight: 300;
+		font-size: 13px;
+		color: #4673ab;
+		text-decoration: underline;
+		padding: 0px 0px 0px 12px;
+	}
+}
+.items-new {
+	display: flex;
+	padding: 0px 55px 0px 55px;
+	&__column {
+	}
+
+	&__item {
+	}
+}
+.item {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	&__image {
+	}
+
+	&__label {
+	}
+
+	&__price {
+	}
+
+	&__text {
+	}
+
+	&__value {
+	}
+
+	&__old-value {
+	}
+
+	&__footer {
+	}
+
+	&__btn {
+	}
+
+	&__details {
+	}
+}
+.controls {
+	&__arrow {
 		&_prev {
-			left: 20px;
+			left: 0;
 		}
 
 		&_next {
-			right: 20px;
-			transform: translate(0%, -50%) rotate(180deg);
+			right: 0;
 		}
-	}
-}
-.pagging {
-	&__dot {
 	}
 }
 

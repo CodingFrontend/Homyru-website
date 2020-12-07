@@ -11,7 +11,7 @@ function adaptive_header(w) {
 		contactsEmail = $('.box-contacts__email'),
 		socialContacts = $('.social-contacts');
 
-	if (w < 700) {
+	if (w < 700.98) {
 		if ((contactsPhone, chatSocial, skypeSocial, contactsEmail).filter('done').length == 0) {
 			(contactsPhone, chatSocial, skypeSocial, contactsEmail).addClass('done');
 			headerColumn_0.append(contactsPhone, chatSocial);
@@ -128,18 +128,17 @@ if (document.querySelector('.mainslider')) {
 		observeParents: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
-		// autoHeight: true,
+		autoHeight: true,
 		speed: 500,
 		//touchRatio: 0,
 		//simulateTouch: false,
-		// loop: true,
+		loop: true,
 		//preloadImages: false,
 		//lazy: true,
 		// Dotts
-		// pagination: {
-		// 	el: '.products-slider__info',
-		// 	type: 'fraction',
-		// },
+		pagination: {
+			el: '.mainslider__pagging',
+		},
 		// Arrows
 		navigation: {
 			nextEl: '.controls__arrow_next',

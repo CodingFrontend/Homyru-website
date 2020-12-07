@@ -93,18 +93,17 @@ if (document.querySelector('.mainslider')) {
 		observeParents: true,
 		slidesPerView: 1,
 		spaceBetween: 0,
-		// autoHeight: true,
+		autoHeight: true,
 		speed: 500,
 		//touchRatio: 0,
 		//simulateTouch: false,
-		// loop: true,
+		loop: true,
 		//preloadImages: false,
 		//lazy: true,
 		// Dotts
-		// pagination: {
-		// 	el: '.products-slider__info',
-		// 	type: 'fraction',
-		// },
+		pagination: {
+			el: '.mainslider__pagging',
+		},
 		// Arrows
 		navigation: {
 			nextEl: '.controls__arrow_next',
