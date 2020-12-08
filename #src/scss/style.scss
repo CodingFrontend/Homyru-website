@@ -65,7 +65,7 @@ body {
 ._container {
 	max-width: $maxWidthContainer + px;
 	margin: 0 auto;
-	padding: 0px 10px;
+	padding: 0px 15px;
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -401,6 +401,10 @@ body {
 .page {
 	&__new {
 	}
+	&__recommend {
+	}
+	&__sale {
+	}
 }
 .new-page {
 	margin: 0px 0px 40px 0px;
@@ -411,26 +415,20 @@ body {
 	}
 
 	&__content {
-		position: relative;
-		padding: 0px 55px 0px 55px;
 	}
 
 	&__items {
 	}
-
-	&__controls {
-	}
-	&__arrow {
-		&_prev {
-			left: 0;
-		}
-
-		&_next {
-			right: 0;
-		}
+}
+.page-content {
+	position: relative;
+	padding: 0px 55px 0px 55px;
+	@media (max-width: $md1+px) {
+		padding: 0;
 	}
 }
-.top-new {
+
+.top {
 	display: flex;
 	align-items: center;
 	margin: 0px 0px 35px 0px;
@@ -445,27 +443,48 @@ body {
 		text-transform: uppercase;
 		font-weight: 500;
 		font-size: 22px;
+		position: relative;
+		@media (max-width: $md1+px) {
+			padding: 0px 57px 0px 0px;
+			line-height: 24px;
+			&:after {
+				content: "";
+				width: 10px;
+				height: 24px;
+				background: url("../img/icons/arrow-blue.png") 0px 0px no-repeat;
+				position: absolute;
+				right: 28px;
+				top: 0;
+			}
+		}
 	}
 
-	&__all {
+	&__right {
 		font-weight: 300;
 		font-size: 13px;
 		color: #4673ab;
 		text-decoration: underline;
 		padding: 0px 0px 0px 12px;
+		@media (max-width: $md1+px) {
+			font-size: 0;
+			padding: 0px 0px 0px 87px;
+		}
 	}
 }
-.items-new {
+.items {
 	display: flex;
 	margin: 0px -15px;
+}
+.items-new {
 	&__column {
-		flex: 0 0 25%;
-		padding: 0px 15px;
 	}
-
+}
+.items-column {
+	padding: 0px 15px;
 	&__item {
 	}
 }
+
 .item {
 	display: flex;
 	flex-direction: column;
@@ -476,23 +495,24 @@ body {
 	margin: 3px 0px 0px 0px;
 	height: 391px;
 	transition: all 0.3s ease;
-	@media (min-width: $md2+px) {
-		&:hover {
-			border-color: #ff5e1e;
-		}
+	&:hover {
+		border-color: #ff5e1e;
+	}
+	@media (max-width: $md1+px) {
+		padding: 0px 10px 20px 10px;
+	}
+	@media (max-width: 476px) {
+		padding: 0px 37px 20px 37px;
 	}
 	&__sticker {
 		display: inline-flex;
-		align-items: center;
+		align-items: flex-end;
 		justify-content: center;
 		position: absolute;
 		z-index: 2;
 		top: -3px;
 		left: 11px;
 		text-transform: uppercase;
-		font-size: 10px;
-		color: #fff;
-		background-color: #42c16c;
 		width: 34px;
 		height: 34px;
 		&:after {
@@ -502,10 +522,37 @@ body {
 			width: 4px;
 			left: 0;
 			bottom: -66%;
-			border-top: 11px solid #42c16c;
 			border-right: 17px solid transparent;
 			border-bottom: 11px solid transparent;
 			border-left: 17px solid transparent;
+		}
+		&_new {
+			font-size: 10px;
+			line-height: 20px;
+			color: #fff;
+			background-color: #42c16c;
+			&:after {
+				border-top: 11px solid #42c16c;
+			}
+		}
+		&_recommend {
+			background-color: #f7c159;
+			&:after {
+				border-top: 11px solid #f7c159;
+			}
+			img {
+				padding: 0px 0px 3px 0px;
+			}
+		}
+		&_sale {
+			background-color: #499ad9;
+			font-size: 20px;
+			line-height: 25px;
+			color: #fff;
+			&:after {
+				content: "";
+				border-top: 11px solid #499ad9;
+			}
 		}
 	}
 	&__top {
@@ -534,10 +581,8 @@ body {
 		text-decoration: underline;
 		transition: all 0.3s ease;
 		margin: 0px 0px 20px 0px;
-		@media (min-width: $md2+px) {
-			&:hover {
-				color: #ff5e1e;
-			}
+		&:hover {
+			color: #ff5e1e;
 		}
 	}
 
@@ -581,11 +626,9 @@ body {
 		border-radius: 7px;
 		box-shadow: 0px 3px 0px 0px #c44817;
 		transition: all 0.3s ease;
-		@media (min-width: $md2+px) {
-			&:hover {
-				background-color: #4673ab;
-				box-shadow: 0px 3px 0px 0px #365884;
-			}
+		&:hover {
+			background-color: #4673ab;
+			box-shadow: 0px 3px 0px 0px #365884;
 		}
 		span {
 			padding: 0px 0px 0px 30px;
@@ -611,6 +654,53 @@ body {
 		text-decoration: underline;
 		font-weight: 300;
 		font-size: 13px;
+	}
+}
+.recommend-page {
+	margin: 0px 0px 40px 0px;
+
+	&__container {
+	}
+
+	&__top {
+	}
+
+	&__content {
+	}
+
+	&__items {
+	}
+
+	&__column {
+	}
+
+	&__controls {
+	}
+
+	&__arrow {
+		&_prev {
+		}
+
+		&_next {
+		}
+	}
+}
+.sale-page {
+	margin: 0px 0px 40px 0px;
+
+	&__container {
+	}
+
+	&__top {
+	}
+
+	&__content {
+	}
+
+	&__items {
+	}
+
+	&__column {
 	}
 }
 

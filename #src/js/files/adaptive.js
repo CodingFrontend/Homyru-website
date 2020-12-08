@@ -23,6 +23,7 @@ function adaptive_header(w) {
 		contactsEmail.appendTo(boxContacts);
 		socialContacts.append(chatSocial, skypeSocial);
 	}
+
 }
 
 

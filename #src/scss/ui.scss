@@ -14,8 +14,40 @@
 		transform: translate(0%, -50%) rotate(180deg);
 	}
 }
+.items-control {
+	&__arrow {
+		&_prev {
+			left: 0;
+			@media (max-width: $md1+px) {
+				left: auto;
+				right: 40px;
+				transform: rotate(180deg);
+			}
+		}
+		&_next,
+		&_prev {
+			@media (max-width: $md1+px) {
+				top: -62px;
+				width: 30px;
+				height: 30px;
+				background: #fff url("../img/icons/item-slider.png") center no-repeat;
+				border: 3px solid #dbdee6;
+				border-radius: 50%;
+				transition: all 0.3s ease;
+				&:hover {
+					border: 3px solid #ff5e1e;
+				}
+			}
+		}
 
-
+		&_next {
+			right: 0;
+			@media (max-width: $md1+px) {
+				transform: rotate(0deg);
+			}
+		}
+	}
+}
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

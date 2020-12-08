@@ -154,7 +154,7 @@
 			padding: 15px 23 / $maxWidthContainer * 100vw 15px 23 / $maxWidthContainer * 100vw;
 		}
 		@media (max-width: 1110px) {
-			padding: 15px 18 / $maxWidthContainer * 100vw 15px 18 / $maxWidthContainer * 100vw;
+			padding: 15px 17 / $maxWidthContainer * 100vw 15px 17 / $maxWidthContainer * 100vw;
 		}
 		@media (max-width: $md2+px) {
 			border-right: none;
@@ -758,7 +758,7 @@
 			}
 		}
 		&_prev {
-			left: 10px;
+			left: 15px;
 			border-top-left-radius: 10px;
 			border-bottom-left-radius: 10px;
 			&:after {
@@ -773,7 +773,7 @@
 		}
 
 		&_next {
-			right: 10px;
+			right: 15px;
 			border-top-right-radius: 10px;
 			border-bottom-right-radius: 10px;
 			&.swiper-button-disabled {
