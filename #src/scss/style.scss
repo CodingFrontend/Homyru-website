@@ -415,6 +415,8 @@ body {
 	}
 	&__reasons {
 	}
+	&__numbers {
+	}
 }
 .new-page {
 	margin: 0px 0px 40px 0px;
@@ -1110,7 +1112,15 @@ body {
 	}
 }
 .reasons-page {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: 660px) {
+		display: none;
+	}
 	&__container {
+	}
+	&__top {
+		&_title {
+		}
 	}
 
 	&__header {
@@ -1118,6 +1128,12 @@ body {
 		min-height: 75px;
 		display: flex;
 		align-items: center;
+		@media (max-width: $md1+px) {
+			padding: 15px 20px 10px 20px;
+		}
+		@media (max-width: $md2+px) {
+			padding: 10px;
+		}
 	}
 
 	&__content {
@@ -1135,8 +1151,11 @@ body {
 	&__item {
 		border-radius: 10px;
 		overflow: hidden;
+		display: flex;
+		flex-direction: column;
+		min-height: 100%;
 		&_problems {
-			border: 1px solid #cb0b13;
+			border: 1px solid #f6bdbf;
 			.reasons-page__header {
 				background-color: #cb0b13;
 				.reasons-page__title {
@@ -1145,7 +1164,7 @@ body {
 			}
 		}
 		&_solutions {
-			border: 1px solid #16a333;
+			border: 1px solid #9bd1a6;
 			.reasons-page__header {
 				background-color: #16a333;
 				.reasons-page__title {
@@ -1155,21 +1174,203 @@ body {
 		}
 	}
 	&__title {
-		font-weight: 500;
+		font-weight: 400;
 		font-size: 16px;
 		color: #fff;
 		text-transform: uppercase;
 		line-height: 18px;
 		padding: 0px 0px 0px 35px;
+		@media (max-width: $md1+px) {
+			font-size: 15px;
+		}
+		@media (max-width: 750px) {
+			font-size: 14px;
+		}
 	}
 
 	&__body {
+		padding: 20px 30px;
+		@media (max-width: $md1+px) {
+			padding: 20px;
+		}
+		@media (max-width: $md2+px) {
+			padding: 20px 10px;
+		}
 	}
 
 	&__list {
+		font-weight: 300;
+		color: #040d0d;
+		font-size: 15px;
+		line-height: 18px;
+		flex: 1 1 auto;
+		span {
+			font-weight: 500;
+		}
+		li {
+			margin: 0px 0px 10px 0px;
+		}
+		p {
+			margin: 0px 0px 10px 0px;
+		}
+	}
+
+	&__point {
+		padding: 0px 0px 0px 15px;
+		position: relative;
+		@media (max-width: $md1+px) {
+			padding: 0px 0px 0px 10px;
+		}
+		&:before {
+			content: "";
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			position: absolute;
+			top: 5px;
+			left: 0;
+		}
+		&_red {
+			&:before {
+				background-color: #cb0b13;
+			}
+		}
+		&_green {
+			&:before {
+				background-color: #16a333;
+			}
+		}
+	}
+}
+.top-items {
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 35px 0px;
+	span {
+		flex: 1 1 auto;
+		height: 1px;
+		background-color: #dbdee6;
+	}
+	&__title {
+		color: #040d0d;
+		padding: 0px 10px 0px 0px;
+		text-transform: uppercase;
+		font-weight: 500;
+		font-size: 22px;
+	}
+}
+
+.number-page {
+	margin: 0px 0px 40px 0px;
+	@media (max-width: 660px) {
+		display: none;
+	}
+	&__container {
+	}
+
+	&__top {
+	}
+	&__right {
+		@media (min-width: 935px) {
+			padding: 0 !important;
+		}
+	}
+	&__title {
+		padding-right: 25px !important;
+		&:after {
+			content: "";
+			width: 0 !important;
+			height: 0 !important;
+		}
+	}
+
+	&__content {
+		position: relative;
+		padding: 0px 15px;
+		@media (max-width: $md1+px) {
+			padding: 0;
+		}
+	}
+
+	&__items {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 0px -25px;
+		@media (max-width: $md1+px) {
+			margin: 0px -10px;
+		}
 	}
 
 	&__item {
+		padding: 0px 25px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		@media (max-width: $md1+px) {
+			padding: 0px 10px;
+		}
+	}
+
+	&__amount {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 135px;
+		height: 135px;
+		border-radius: 50%;
+		font-weight: 700;
+		border: 1px solid #dde0e7;
+		margin: 0px 0px 15px 0px;
+		&_orange {
+			color: #ff5e1e;
+		}
+		&_blue {
+			color: #394a5c;
+		}
+		&_1 {
+			font-size: 80px;
+		}
+		&_2 {
+			font-size: 54px;
+		}
+		&_3 {
+			font-size: 19px;
+		}
+		&_4 {
+			font-size: 80px;
+		}
+		&_5 {
+			font-size: 80px;
+		}
+		&_6 {
+			font-size: 80px;
+		}
+	}
+
+	&__text {
+		color: #040d0d;
+		text-transform: uppercase;
+		font-size: 12px;
+		line-height: 18px;
+		font-weight: 500;
+		text-align: center;
+	}
+	&__controls {
+	}
+	&__arrow {
+		&_prev {
+			@media (min-width: 935px) {
+				display: none;
+			}
+		}
+
+		&_next {
+			@media (min-width: 935px) {
+				display: none;
+			}
+		}
 	}
 }
 

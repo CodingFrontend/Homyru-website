@@ -400,5 +400,42 @@ if (document.querySelector('.brands-page__items')) {
 	});
 };
 
+if (document.querySelector('.number-page__items')) {
+	let buyPage = new Swiper('.number-page__items', {
+		// autoplay: {
+		// 	delay: 2500,
+		// 	disableOnInteraction: false,
+		// },
+		observer: true,
+		observeParents: true,
+		slidesPerView: 6,
+		spaceBetween: 0,
+		// autoHeight: true,
+		speed: 800,
+		//touchRatio: 0,
+		//simulateTouch: false,
+		loop: true,
+		//preloadImages: false,
+		//lazy: true,
+		// Dotts
+		// pagination: {
+		// 	el: '.mainslider__pagging',
+		// },
+		// Arrows
+		navigation: {
+			nextEl: '.number-page__arrow_next',
+			prevEl: '.number-page__arrow_prev',
+		},
+		breakpoints: {
+			660: {
+				slidesPerView: 4,
+			},
+			935: {
+				slidesPerView: 6,
+			}
+		},
+	});
+};
+
 
 
