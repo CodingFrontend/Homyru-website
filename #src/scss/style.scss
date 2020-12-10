@@ -417,6 +417,8 @@ body {
 	}
 	&__numbers {
 	}
+	&__work {
+	}
 }
 .new-page {
 	margin: 0px 0px 40px 0px;
@@ -1259,7 +1261,6 @@ body {
 		font-size: 22px;
 	}
 }
-
 .number-page {
 	margin: 0px 0px 40px 0px;
 	@media (max-width: 660px) {
@@ -1370,6 +1371,207 @@ body {
 			@media (min-width: 935px) {
 				display: none;
 			}
+		}
+	}
+}
+.work-page {
+	&__body {
+	}
+	&__container {
+	}
+
+	&__top {
+		@media (max-width: 685px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__title {
+		padding: 0px 25px 0px 0px !important;
+		&:after {
+			content: "";
+			width: 0 !important;
+			height: 0 !important;
+		}
+	}
+
+	&__content {
+		padding: 0px 5px;
+		@media (max-width: $md1+px) {
+			padding: 0px 0px;
+		}
+	}
+	&__text {
+		padding: 40px 0px 0px 0px;
+		border-top: 1px solid #dbdee6;
+		@media (max-width: $md2+px) {
+			padding: 30px 0px 0px 0px;
+		}
+		@media (max-width: 660px) {
+			display: none;
+		}
+	}
+
+	&__row {
+		display: flex;
+		margin: 0px -20px;
+		@media (max-width: $md1+px) {
+			margin: 0px -15px;
+		}
+	}
+
+	&__column {
+		flex: 0 0 50%;
+		padding: 0px 20px;
+		font-weight: 300;
+		color: #040d0d;
+		font-size: 15px;
+		line-height: 20px;
+		a {
+			color: #ff5e1e;
+			span {
+				border-bottom: 1px solid;
+			}
+		}
+		p {
+			padding: 0px 0px 25px 0px;
+		}
+		@media (max-width: $md1+px) {
+			padding: 0px 15px;
+		}
+	}
+}
+.top-work {
+	display: flex;
+	align-items: center;
+	margin: 0px 0px 50px 0px;
+	flex-wrap: wrap;
+	&__label,
+	&__option {
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 15px;
+		@media (max-width: 685px) {
+			font-size: 14px;
+		}
+	}
+	&__label {
+		padding: 0px 30px 0px 0px;
+		color: #040d0d;
+	}
+
+	&__option {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0px 4px 0px 0px;
+		height: 45px;
+		padding: 0px 25px;
+		background-color: #dbdee6;
+		border-radius: 7px;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		span {
+			white-space: nowrap;
+			color: #ff5e1e;
+			border-bottom: 1px dotted;
+		}
+		@media (max-width: 685px) {
+			margin: 4px 4px 4px 0px;
+			padding: 0px 5px;
+			height: 40px;
+		}
+	}
+
+	&__link {
+	}
+}
+
+.body-work {
+	display: grid;
+	grid-template-columns: 1fr 275px 255px 1fr;
+	margin: 0px -40px 40px -40px;
+	@media (max-width: $md1+px) {
+		margin: 0px -30px 40px -30px;
+		grid-template-columns: 1fr 275px 245px 1fr;
+	}
+	@media (max-width: 975px) {
+		grid-template-columns: 1fr 244px 200px 1fr;
+	}
+	@media (max-width: 910px) {
+		grid-template-columns: 1fr 160px 160px 1fr;
+		margin: 0px -10px 30px -10px;
+	}
+	@media (max-width: 635px) {
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+	}
+	&__item {
+	}
+}
+.item-work {
+	display: flex;
+	position: relative;
+	padding: 0px 40px;
+	@media (max-width: $md1+px) {
+		padding: 0px 30px;
+	}
+	@media (max-width: 910px) {
+		padding: 0px 10px;
+	}
+	&:after {
+		content: "";
+		width: 45px;
+		height: 10px;
+		background: url("../img/icons/arrow-work.png") 0 0 no-repeat;
+		position: absolute;
+		top: 12px;
+		right: 0px;
+		@media (max-width: 500px) {
+			right: -20px;
+		}
+	}
+	&:last-child {
+		&:after {
+			width: 0;
+			height: 0;
+		}
+	}
+	@media (max-width: 635px) {
+		&:nth-child(2) {
+			&:after {
+				width: 0;
+				height: 0;
+			}
+		}
+	}
+
+	&__content {
+		display: flex;
+		width: 100%;
+		@media (max-width: 975px) {
+			flex-direction: column;
+		}
+	}
+	&__icon {
+		text-align: center;
+		@media (max-width: 975px) {
+			margin: 0px 0px 20px 0px;
+		}
+	}
+
+	&__text {
+		margin: 0px 0px 0px 10px;
+		color: #040d0d;
+		font-weight: 300;
+		font-size: 15px;
+		line-height: 18px;
+		span {
+			font-weight: 700;
+		}
+		@media (max-width: 975px) {
+			margin: 0px 0px 0px 0px;
 		}
 	}
 }

@@ -59,7 +59,7 @@ let path = {
 	},
 	watch: {
 		html: src_folder + "/**/*.html",
-		js: src_folder + "/**/*.js",
+		js: src_folder + "/js/**/*.js",
 		css: src_folder + "/scss/**/*.scss",
 		images: src_folder + "/img/**/*.{jpg,png,svg,gif,ico,webp}",
 		sprite: src_folder + '/iconsprite/*.svg'
