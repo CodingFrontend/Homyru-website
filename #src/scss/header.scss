@@ -328,6 +328,9 @@
 	}
 
 	&__contacts {
+		@media (max-width: $md2+px) {
+			margin-top: -15px;
+		}
 	}
 
 	&__label {
@@ -395,10 +398,8 @@
 .contacts {
 	display: flex;
 	justify-content: center;
-	@media (max-width: $md2+px) {
-		margin-top: -15px;
-	}
 	&__bubble {
+		background-color: #fff;
 		flex: 0 0 98px;
 		width: 98px;
 		align-self: baseline;
@@ -409,7 +410,7 @@
 		text-transform: uppercase;
 		color: #4673ab;
 		border: 2px solid #dbdee6;
-		border-radius: 10px;
+		border-radius: 15px;
 		position: relative;
 		margin: 0px 30px 0px 0px;
 		&:before,
@@ -446,11 +447,11 @@
 	}
 
 	&__box {
-		flex: 0 0 198px;
-		width: 198px;
 	}
 }
 .box-contacts {
+	flex: 0 0 198px;
+	width: 198px;
 	@media (max-width: 820px) {
 		text-align: right;
 	}
@@ -471,6 +472,7 @@
 		margin: 0px 0px 7px 0px;
 		color: #040d0d;
 		font-size: 13px;
+		font-weight: 300;
 		@media (max-width: $md4 + px) {
 			display: none;
 		}
@@ -480,6 +482,7 @@
 		font-size: 13px;
 		color: #4673ab;
 		text-decoration: underline;
+		font-weight: 300;
 		@media (min-width: $md2+px) {
 			&:hover {
 				text-decoration: none;
@@ -524,6 +527,7 @@
 	&__tel {
 		color: #040d0d;
 		font-size: 13px;
+		font-weight: 300;
 	}
 
 	&__skype {
@@ -535,6 +539,7 @@
 	&__skype-login {
 		color: #040d0d;
 		font-size: 13px;
+		font-weight: 300;
 	}
 }
 .search {

@@ -1,168 +1,195 @@
 .footer {
-	position: relative;
-	z-index: 2;
-	&__container {}
-	&__body {
-		@media (min-width: $md2+px){
-			display: flex;
-			margin: 0px -15px;
-		}
+	&__top {
 	}
-	&__column {
-		@media (min-width: $md2+px){
-			padding: 0px 15px;
-			margin-bottom: 25px;
-			flex: 0 1 50%;
-		}
-		&:first-child{
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	&__block {
-		flex: 1 1 auto;
-	}
-	&__payments {
-		img {
-			max-width: 100%;
-		}
-		@media (max-width: $md2+px){
-			padding-bottom: 20px;
-			text-align: center;
-		}
-	}
-	&__widgets {
-	}
+
 	&__bottom {
-		text-align: center;
-		@media (min-width: 360px){
-			display: flex;	
-			align-items: center;
-			padding: 12px 0px;
-			border-top: 1px solid #dadada;
-		}
+	}
+}
+.top-footer {
+	background-color: #5c7489;
+	padding: 40px 0px 30px 0px;
+	&__container {
+	}
+
+	&__row {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__column {
+	}
+
+	&__logo {
+		flex: 0 0 130px;
+		display: inline-block;
+		margin: 0px 0px 25px 0px;
 	}
 	&__copy {
-		flex: 1 1 auto;
-		font-size: 12px;
+		margin: 0px 0px 20px 0px;
+	}
+	&__copy,
+	&__address,
+	&__scheme,
+	&__text,
+	&__link {
 		font-weight: 300;
-		color: #999999;
-		@media (max-width: 360px){
-			margin-bottom: 15px;
+		color: #c8d4dc;
+		font-size: 13px;
+		line-height: 18px;
+	}
+
+	&__address {
+		span {
+			border-bottom: 1px solid;
+			@media (min-width: $md2+px) {
+				&:hover {
+					border: none;
+				}
+			}
 		}
 	}
+
+	&__scheme {
+		span {
+			border-bottom: 1px solid;
+			@media (min-width: $md2+px) {
+				&:hover {
+					border: none;
+				}
+			}
+		}
+	}
+
+	&__menu {
+	}
+
+	&__list {
+		li {
+			margin: 0px 0px 5px 0px;
+		}
+	}
+
+	&__link {
+		span {
+			border-bottom: 1px solid;
+			@media (min-width: $md2+px) {
+				&:hover {
+					border: none;
+				}
+			}
+		}
+	}
+
+	&__contacts {
+	}
+
+	&__text {
+		max-width: 275px;
+	}
+
+	&__social {
+		display: flex;
+		padding: 0px 95px 0px 0px;
+	}
+}
+.contacts {
+	&__bubble {
+	}
+
+	&__box {
+		&_footer {
+		}
+	}
+}
+.box-contacts {
+	&__phone {
+		&_footer {
+			color: #fff;
+		}
+	}
+
+	&__days {
+		&_footer {
+			color: #fff;
+		}
+	}
+
 	&__social {
 	}
-}
-.block-footer {
-	padding-bottom: 20px;
-	text-align: center;
-	@media (min-width: 560px){
-		display: flex;
-		flex: 1 1 auto;
-	}
-	&__column {
-		&:first-child{
-			flex: 0 0 165px;
-			@media (max-width: 560px){
-				padding-bottom: 20px;
-				display: flex;
-				flex-direction: column;
-				justify-content: center;
-			}
-		}
-		&:last-child{
-			flex: 1 1 auto;
-			@media (min-width: 560px){
-				padding-left: 45px;
-			}
-		}
-	}
-	&__logo {
-		display: inline-block;
-		margin-bottom: 25px;
-	}
-	&__phones {
-		display: inline-block;
-		background: url("../img/icons/footer/phone.png") left no-repeat;
-		padding-left: 35px;
-		p {
-			margin-bottom: 5px;
-			&:last-child{
-				margin: 0;
-			}
-		}
-		@media (max-width: 560px){
-			background: none!important;
-			padding-left: 0;
-		}
-	}
-	&__phone {
-		color: #333;
-		font-weight: 900;
-		@media (max-width: 560px){
-			font-size: 18px;
-		}
-	}
-	&__delivery {}
-}
-.delivery-footer {
-	@media (max-width: 560px){
-		text-align: center;
-	}
-	&__title {
-		margin-bottom: 15px;
-		font-weight: 900;
-		text-transform: uppercase;
-		color: #999;
-	}
-	&__items {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: center;
-		margin: 0px -15px;
-	}
-	&__item {
-		padding: 15px;
-		@extend %graystyle;
-		&:hover {
-			@extend %graystyleoff;
-		}
-		@media (max-width: 560px){
-			justify-content: center;
+
+	&__email {
+		&_footer {
+			color: #fff;
 		}
 	}
 }
-.widgets-footer {
-	text-align: center;
-	margin-bottom: 20px;
-	@media (min-width: 560px){
-		display: flex;
-		justify-content: center;
+.social-contacts {
+	&__chat {
+		&_footer {
+		}
 	}
-	&__column {
-		display: block;
-		margin-bottom: 20px;
-		@media (min-width: 560px){
-			padding-right: 30px;
-			&:last-child{
-				padding: 0;
-			}
+
+	&__skype {
+		&_footer {
 		}
 	}
 }
-.social-footer {
-	text-align: center;
-	@media (min-width: 360px){
+.chat-social {
+	&__whatsapp {
+	}
+
+	&__viber {
+	}
+
+	&__tel {
+		&_footer {
+			color: #fff;
+		}
+	}
+
+	&__skype {
+	}
+
+	&__skype-login {
+		&_footer {
+			color: #fff;
+		}
+	}
+}
+
+.social {
+	&__icon {
+		margin: 0px 3px 0px 0px;
+		&:last-child {
+			margin: 0px 0px 0px 0px;
+		}
+		&_vk {
+		}
+
+		&_facebook {
+		}
+
+		&_twitter {
+		}
+	}
+}
+
+.bottom-footer {
+	background-color: #2c3f53;
+	padding: 15px 0px;
+	&__container {
 		display: flex;
 		align-items: center;
 	}
-	&__item {
-		display: inline-block;
-		cursor: pointer;
-		margin-right: 10px;
-		&:last-child{
-			margin: 0;
-		}
+
+	&__text {
+		font-weight: 300;
+		color: #c8d4dc;
+		font-size: 11px;
+		line-height: 18px;
+	}
+
+	&__statistics {
+		padding: 0px 0px 0px 270px;
 	}
 }
