@@ -7,25 +7,48 @@
 }
 .top-footer {
 	background-color: #5c7489;
-	padding: 40px 0px 30px 0px;
+	padding: 35px 0px 30px 0px;
+	@media (max-width: 725px) {
+		padding: 0px 0px 10px 0px;
+	}
 	&__container {
 	}
 
 	&__row {
 		display: flex;
 		justify-content: space-between;
+		margin: 0 -10px;
+		@media (max-width: 725px) {
+			padding: 30px 0px 0px 0px;
+		}
 	}
 
 	&__column {
+		padding: 0px 10px;
+		&.done {
+			margin: 0 -25px;
+		}
+		@media (max-width: 725px) {
+			&:nth-child(2) {
+				display: none;
+			}
+		}
 	}
 
 	&__logo {
-		flex: 0 0 130px;
+		width: 130px;
 		display: inline-block;
-		margin: 0px 0px 25px 0px;
+		margin: 0px 0px 10px 0px;
 	}
 	&__copy {
 		margin: 0px 0px 20px 0px;
+		p {
+			&:nth-child(2) {
+				@media (max-width: 725px) {
+					display: none;
+				}
+			}
+		}
 	}
 	&__copy,
 	&__address,
@@ -66,97 +89,56 @@
 	&__list {
 		li {
 			margin: 0px 0px 5px 0px;
+			&:last-child {
+				margin: 0px 0px 0px 0px;
+			}
+			@media (max-width: 725px) {
+				margin: 0px 0px 0px 0px;
+			}
 		}
 	}
 
 	&__link {
+		display: block;
 		span {
 			border-bottom: 1px solid;
+			white-space: nowrap;
 			@media (min-width: $md2+px) {
 				&:hover {
 					border: none;
 				}
 			}
 		}
+		@media (max-width: 725px) {
+			padding: 7px 15px;
+			border-bottom: 1px solid #dbdee6;
+			background: url("../img/icons/arrow-footer.png") right 15px center no-repeat;
+			span {
+				border: none;
+			}
+		}
 	}
 
 	&__contacts {
+		margin: 0px 0px 20px 0px;
 	}
 
 	&__text {
 		max-width: 275px;
+		@media (max-width: 725px) {
+			margin: 0px -60px 0px 0px;
+		}
 	}
 
 	&__social {
 		display: flex;
-		padding: 0px 95px 0px 0px;
-	}
-}
-.contacts {
-	&__bubble {
-	}
-
-	&__box {
-		&_footer {
+		padding: 0px 0px 0px 130px;
+		@media (max-width: $md1+px) {
+			padding: 0px 0px 0px 0px;
+			justify-content: flex-end;
 		}
 	}
 }
-.box-contacts {
-	&__phone {
-		&_footer {
-			color: #fff;
-		}
-	}
-
-	&__days {
-		&_footer {
-			color: #fff;
-		}
-	}
-
-	&__social {
-	}
-
-	&__email {
-		&_footer {
-			color: #fff;
-		}
-	}
-}
-.social-contacts {
-	&__chat {
-		&_footer {
-		}
-	}
-
-	&__skype {
-		&_footer {
-		}
-	}
-}
-.chat-social {
-	&__whatsapp {
-	}
-
-	&__viber {
-	}
-
-	&__tel {
-		&_footer {
-			color: #fff;
-		}
-	}
-
-	&__skype {
-	}
-
-	&__skype-login {
-		&_footer {
-			color: #fff;
-		}
-	}
-}
-
 .social {
 	&__icon {
 		margin: 0px 3px 0px 0px;
@@ -173,13 +155,16 @@
 		}
 	}
 }
-
 .bottom-footer {
 	background-color: #2c3f53;
 	padding: 15px 0px;
 	&__container {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
+		@media (max-width: 725px) {
+			justify-content: center;
+		}
 	}
 
 	&__text {
@@ -187,9 +172,15 @@
 		color: #c8d4dc;
 		font-size: 11px;
 		line-height: 18px;
+		@media (max-width: 725px) {
+			display: none;
+		}
 	}
 
 	&__statistics {
-		padding: 0px 0px 0px 270px;
+		padding: 0px 0px 0px 40px;
+		@media (max-width: 725px) {
+			padding: 0px 0px 0px 0px;
+		}
 	}
 }
