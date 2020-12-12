@@ -8,6 +8,11 @@
 //&display=swap&subset=cyrillic-ext
 // @import "fonts";
 //
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
+// @import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 //</Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================
@@ -38,9 +43,6 @@ $color: #1ab9ce;
 body {
 	color: #000;
 	font-size: 14px;
-	&._lock {
-		overflow: hidden;
-	}
 }
 //</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 

@@ -20,7 +20,7 @@
 		"gulp-newer": "latest",
 		"gulp-plumber": "latest",
 		"gulp-rename": "latest",
-		"gulp-replace": "latest",
+		"gulp-replace": "^1.0.0",
 		"gulp-responsive": "latest",
 		"gulp-sass": "^4.1.0",
 		"gulp-svg-sprite": "^1.5.0",
@@ -34,6 +34,8 @@
 	},
 	"dependencies": {
 		"file-exists": "^5.0.1",
-		"gulp-if": "^3.0.0"
+		"gulp-cheerio": "^1.0.0",
+		"gulp-if": "^3.0.0",
+		"gulp-svgmin": "^3.0.0"
 	}
 }

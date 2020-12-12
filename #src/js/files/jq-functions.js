@@ -1,10 +1,3 @@
-// burger
-$('.icon-menu').click(function (event) {
-	$(this).toggleClass('_active');
-	$('.menu__body').toggleClass('_active');
-})
-// 
-
 // background-image
 function ibg() {
 	$.each($('.ibg'), function (index, val) {
