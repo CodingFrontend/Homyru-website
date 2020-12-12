@@ -8,11 +8,6 @@
 //&display=swap&subset=cyrillic-ext
 // @import "fonts";
 //
-// @import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
-// @import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
-// @import "../../node_modules/@fortawesome/fontawesome-free/scss/regular";
-// @import "../../node_modules/@fortawesome/fontawesome-free/scss/solid";
-// @import "../../node_modules/@fortawesome/fontawesome-free/scss/v4-shims";
 //</Подключаем шрифты>=======================================================================================
 
 //<Иконочные шрифты>==========================================================================================
@@ -70,16 +65,10 @@ body {
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
-@import "forms";
 @import "ui";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-//@import "datepicker";
-//@import "lightgallery";
-// @import "nouislider";
-@import "pagging";
-@import "popup";
 @import "header";
 @import "footer";
 @import "home";
