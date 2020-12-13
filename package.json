@@ -36,6 +36,7 @@
 		"file-exists": "^5.0.1",
 		"gulp-cheerio": "^1.0.0",
 		"gulp-if": "^3.0.0",
-		"gulp-svgmin": "^3.0.0"
+		"gulp-svgmin": "^3.0.0",
+		"svgxuse": "^1.2.6"
 	}
 }

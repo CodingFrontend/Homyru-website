@@ -1,7 +1,5 @@
 // let all browsers support referring icons to external svg-file
-$(document).ready(function () {
-	svg4everybody({});
-});
+svg4everybody({});
 // 
 
 // burger
