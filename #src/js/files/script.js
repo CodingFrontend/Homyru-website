@@ -3,23 +3,54 @@ svg4everybody({});
 // 
 
 // burger
-let menuActions = document.querySelector('.menu__actions');
-let menuBody = document.querySelector('.menu__body');
-let iconMenu = document.querySelector('.icon-menu');
-let menuDropdowns = document.querySelectorAll('.menu__dropdown');
+if (isMobile.any()) {
+	(function () {
+		let menuActions = document.querySelector('.menu__actions');
+		let iconMenu = document.querySelector('.icon-menu');
+		let menuList = document.querySelector('.menu__list');
+		let menuLinks = menuList.querySelectorAll('.menu__link');
+		let dropdownContents = document.querySelectorAll('.dropdown__content');
 
-menuActions.addEventListener('click', function (e) {
-	iconMenu.classList.toggle('_active');
-	menuBody.classList.toggle('_active');
-	_slideToggle(menuBody);
-});
+		if (menuActions != null) {
+			let delay = 500;
+			let menuBody = document.querySelector(".menu__body");
+			menuActions.addEventListener("click", function () {
+				if (unlock) {
+					body_lock(delay);
+					iconMenu.classList.toggle("_active");
+					menuBody.classList.toggle("_active");
+				}
+			});
+		}
 
-for (let i = 0; i < menuDropdowns.length; i++) {
-	let dropdownContent = menuDropdowns[i].querySelector('.dropdown__content');
-	let menuLink = menuDropdowns[i].querySelector('.menu__link');
-	menuLink.addEventListener('click', function (e) {
-		e.preventDefault();
-		_slideToggle(dropdownContent);
-	});
+		// Hide submenu when clicked outside of link
+
+		function closeActive() {
+			for (let index = 0; index < dropdownContents.length; index++) {
+				let dropdownContent = dropdownContents[index];
+
+				if (window.getComputedStyle(dropdownContent).display === 'block') {
+					_slideUp(dropdownContent);
+				}
+			}
+		}
+
+		for (let i = 0; i < menuLinks.length; i++) {
+			let menuLink = menuLinks[i];
+			menuLink.addEventListener('click', function (e) {
+
+				let parentLink = menuLink.parentNode;
+				let dropdownContent = parentLink.querySelector('.dropdown__content');
+				e.preventDefault();
+
+				closeActive();
+
+				if (window.getComputedStyle(dropdownContent).display === 'none') {
+					_slideDown(dropdownContent);
+				}
+				e.stopPropagation();
+			});
+		}
+	})();
 }
 //

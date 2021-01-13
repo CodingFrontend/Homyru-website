@@ -79,8 +79,6 @@
 	&__body {
 		@media (max-width: $md2+px) {
 			display: none;
-			padding: 50px 0px 15px 0px;
-			width: 100%;
 			&:before {
 				content: "";
 				position: fixed;
@@ -89,6 +87,18 @@
 				top: 0;
 				left: 0;
 				background-color: #040d0d;
+			}
+			&._active {
+				display: block;
+				padding: 50px 0px 15px 0px;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				left: 0;
+				top: 0;
+				z-index: 3;
+				background-color: #040d0d;
+				overflow-y: scroll;
 			}
 		}
 	}
@@ -117,7 +127,7 @@
 				}
 			}
 			@media (max-width: $md2+px) {
-				margin: 0px 0px 15px 0px;
+				margin: 0px 0px 17px 0px;
 				&:last-child {
 					margin: 0px 0px 0px 0px;
 				}
@@ -159,7 +169,7 @@
 		@media (max-width: $md2+px) {
 			border-right: none;
 			padding: 0;
-			font-size: 16px;
+			font-size: 19px;
 		}
 	}
 }
@@ -178,7 +188,7 @@
 				}
 			}
 			@media (max-width: $md2+px) {
-				margin: 0px 0px 10px 0px;
+				margin: 0px 0px 14px 0px;
 				&:last-child {
 					margin: 0px 0px 0px 0px;
 				}
@@ -205,7 +215,7 @@
 		@media (max-width: $md2+px) {
 			text-align: center;
 			padding: 0px;
-			font-size: 15px;
+			font-size: 17px;
 		}
 	}
 }
@@ -213,12 +223,12 @@
 	display: none;
 	position: fixed;
 	width: 100%;
-	background-color: #040d0d;
-	height: 40px;
 	top: 0;
 	left: 0;
+	z-index: 50;
+	background-color: #040d0d;
+	height: 40px;
 	cursor: pointer;
-	z-index: 5;
 	@media (max-width: $md2+px) {
 		display: block;
 	}
