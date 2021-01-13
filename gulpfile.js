@@ -28,11 +28,11 @@ let fonter = require('gulp-fonter');
 let ttf2woff = require('gulp-ttf2woff');
 let ttf2woff2 = require('gulp-ttf2woff2');
 
-// let iconfont = require('gulp-iconfont');
-// let iconfontCss = require('gulp-iconfont-css');
-// let fontName = 'icomoon';
 let fileExists = require('file-exists');
 let gulpif = require('gulp-if');
+
+let ghPages = require('gh-pages');
+let pathF = require('path');
 
 let project_name = require("path").basename(__dirname);
 let src_folder = "#src";
@@ -205,10 +205,6 @@ function fontsStyle(done) {
 	}
 	done();
 }
-// gulp.task('icons', function () {
-// 	return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
-// 		.pipe(gulp.dest(project_name + '/webfonts/'));
-// });
 
 // use a file of webfonts to check it's existing then make a copy in dist
 const fontawesomeWebfont =
@@ -227,31 +223,6 @@ async function copyfontawesomeWebfontsTask() {
 		src(webFontsPath).pipe(dest(path.build.distWebfonts))
 	);
 }
-// function iconsfont() {
-// 	src(src_folder + '/iconsfont/*.svg')
-// 		.pipe(iconfontCss({
-// 			path: src_folder + '/templates/icons.scss',
-// 			fontName: fontName,
-// 			targetPath: '../scss/icons.scss',
-// 			fontPath: '../fonts/icons/'
-// 		}))
-// 		.pipe(iconfont({
-// 			fontName: fontName
-// 		}))
-// 		.pipe(dest(path.build.iconsfont));
-// 	return src(src_folder + '/iconsfont/*.svg')
-// 		.pipe(iconfontCss({
-// 			path: src_folder + '/templates/icons.scss',
-// 			fontName: fontName,
-// 			targetPath: '../scss/icons.scss',
-// 			fontPath: '../fonts/icons/'
-// 		}))
-// 		.pipe(iconfont({
-// 			fontName: fontName
-// 		}))
-// 		.pipe(dest(path.build.iconsfont))
-// 		.pipe(browsersync.stream());
-// }
 
 function svgSpriteBuild() {
 	return src(path.src.sprite)
@@ -264,9 +235,9 @@ function svgSpriteBuild() {
 		// remove all fill, style and stroke declarations in out shapes
 		.pipe(cheerio({
 			run: function ($) {
-				// $('[fill]').removeAttr('fill');
+				$('[fill]').removeAttr('fill');
 				$('[stroke]').removeAttr('stroke');
-				// $('[style]').removeAttr('style');
+				$('[style]').removeAttr('style');
 			},
 			parserOptions: { xmlMode: true }
 		}))
@@ -290,6 +261,10 @@ function svgSpriteBuild() {
 		.pipe(dest('#src/img/'));
 }
 
+function deploy(cb) {
+	ghPages.publish(pathF.join(process.cwd(), project_name), cb);
+}
+
 function cb() { }
 function clean() {
 	return del(path.clean);
@@ -305,6 +280,7 @@ function watchFiles() {
 let build = gulp.series(clean, fonts_otf, gulp.parallel(html, css, js, favicon, images, svgSpriteBuild, fonts, copyfontawesomeWebfontsTask), fontsStyle);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
+exports.deploy = deploy;
 exports.svgSpriteBuild = svgSpriteBuild;
 exports.copyfontawesomeWebfontsTask = copyfontawesomeWebfontsTask;
 exports.html = html;
