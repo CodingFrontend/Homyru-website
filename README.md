@@ -2,7 +2,7 @@
 
 Верстка главной страницы интернет-магазина по готовому psd-макету (desktop, laptop и mobile версии).
 
-#Ссылка на сайт
+#№ Ссылка на сайт
 
 [Link to GitHub Pages](https://mjulia111.github.io/Homyru-website/)
 
