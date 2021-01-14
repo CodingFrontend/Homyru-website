@@ -1164,10 +1164,6 @@ body {
 	}
 
 	&__content {
-		padding: 0px 5px;
-		@media (max-width: $md1+px) {
-			padding: 0px 0px;
-		}
 	}
 	&__text {
 		padding: 40px 0px 0px 0px;
@@ -1218,26 +1214,18 @@ body {
 		}
 	}
 }
-.top-work {
-	display: flex;
-	align-items: center;
-	margin: 0px 0px 50px 0px;
-	flex-wrap: wrap;
-	&__label,
-	&__option {
-		text-transform: uppercase;
-		font-weight: 700;
-		font-size: 15px;
-		@media (max-width: 685px) {
-			font-size: 14px;
-		}
-	}
-	&__label {
-		padding: 0px 30px 0px 0px;
-		color: #040d0d;
+.work-page {
+	&__nav {
 	}
 
-	&__option {
+	&__list {
+		display: flex;
+		align-items: center;
+		margin: 0px 0px 50px 0px;
+		flex-wrap: wrap;
+	}
+
+	&__item {
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -1253,6 +1241,19 @@ body {
 			white-space: nowrap;
 			color: #ff5e1e;
 			border-bottom: 1px dotted;
+			text-transform: uppercase;
+			font-weight: 700;
+			font-size: 15px;
+			@media (max-width: 685px) {
+				font-size: 14px;
+			}
+		}
+		&._active {
+			background-color: #fff;
+			span {
+				color: #040d0d;
+				border-bottom: none;
+			}
 		}
 		@media (max-width: 685px) {
 			margin: 4px 4px 4px 0px;
@@ -1261,31 +1262,36 @@ body {
 		}
 	}
 
-	&__link {
+	&__body {
+	}
+
+	&__block {
+		display: none;
+		-ms-grid-columns: 1fr 275px 255px 1fr;
+		grid-template-columns: 1fr 275px 255px 1fr;
+		margin: 0px -40px 40px -40px;
+		&._active {
+			display: -ms-grid;
+			display: grid;
+		}
+		@media (max-width: $md1+px) {
+			margin: 0px -30px 40px -30px;
+			grid-template-columns: 1fr 275px 245px 1fr;
+		}
+		@media (max-width: 975px) {
+			grid-template-columns: 1fr 244px 200px 1fr;
+		}
+		@media (max-width: 910px) {
+			grid-template-columns: 1fr 160px 160px 1fr;
+			margin: 0px -10px 30px -10px;
+		}
+		@media (max-width: 635px) {
+			grid-template-rows: 1fr 1fr;
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }
-
 .body-work {
-	display: -ms-grid;
-	display: grid;
-	-ms-grid-columns: 1fr 275px 255px 1fr;
-	grid-template-columns: 1fr 275px 255px 1fr;
-	margin: 0px -40px 40px -40px;
-	@media (max-width: $md1+px) {
-		margin: 0px -30px 40px -30px;
-		grid-template-columns: 1fr 275px 245px 1fr;
-	}
-	@media (max-width: 975px) {
-		grid-template-columns: 1fr 244px 200px 1fr;
-	}
-	@media (max-width: 910px) {
-		grid-template-columns: 1fr 160px 160px 1fr;
-		margin: 0px -10px 30px -10px;
-	}
-	@media (max-width: 635px) {
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 1fr 1fr;
-	}
 	&__item {
 		&_1 {
 			-ms-grid-column: 1;
