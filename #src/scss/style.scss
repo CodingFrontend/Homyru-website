@@ -196,18 +196,24 @@ body {
 	}
 
 	&__label {
-		display: inline-block;
-		color: #4673ab;
-		transition: all 0.3s ease;
-		font-weight: 500;
+		a {
+			display: inline-block;
+			color: #4673ab;
+			transition: all 0.3s ease;
+			font-weight: 500;
+		}
 		&:hover {
-			color: #ff5816;
-			text-decoration: underline;
+			a {
+				color: #ff5816;
+				text-decoration: underline;
+			}
 		}
 	}
 
 	&__text {
-		color: #040d0d;
+		p {
+			color: #040d0d;
+		}
 	}
 	&__all {
 		display: inline-block;
