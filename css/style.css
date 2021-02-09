@@ -2061,7 +2061,7 @@ textarea.input {
   font-size: 13px;
 }
 
-.side-news__label {
+.side-news__label a {
   display: inline-block;
   color: #4673ab;
   -webkit-transition: all 0.3s ease;
@@ -2070,12 +2070,12 @@ textarea.input {
   font-weight: 500;
 }
 
-.side-news__label:hover {
+.side-news__label:hover a {
   color: #ff5816;
   text-decoration: underline;
 }
 
-.side-news__text {
+.side-news__text p {
   color: #040d0d;
 }
 
